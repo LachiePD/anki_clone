@@ -1,6 +1,6 @@
 URGENT AND IMMEDIATE
 
-
+need to add .env to my github ( in private) so I can work on my project from my laptop.
 need to create a <Card/> component that will store the card info to be shown
 
 Create a global reusable Button component to be used across all pages.
