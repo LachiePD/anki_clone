@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { LoadingContext } from "@/app/LoadingContext.js";
 import DeckLink from "./DeckLink.jsx";
 
+//com`
 const Library = ({
   deckList,
   setDeckList,
@@ -12,6 +13,7 @@ const Library = ({
   const [error, setError] = useState(null);
   const { loading, setLoading } = useContext(LoadingContext);
 
+	console.log(deckList);
   const buildDecks = () => {
     return deckList.map((deck) => {
       return (

@@ -10,3 +10,8 @@ Refactor homescreen/page.js by moving deck state into a useDeckLibrary hook.
 Implement loading state indicators for all asynchronous data fetching.
 
 Add a dropdown menu to library decks for delete and edit actions.
+
+
+the data being returned from the front-end calls arnt uniform. Some need to access nested properties to get the data. They should all be {data:"", message:""}
+
+

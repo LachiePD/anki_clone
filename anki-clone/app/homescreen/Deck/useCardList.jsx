@@ -12,7 +12,7 @@ export const useCardList = (deckInfo) => {
   }, [deckInfo.id]);
 
   useEffect(() => {
-    if (!deckInfo.id) return; // Guard clause
+    if (!deckInfo.id) return; 
     fetchCards();
   }, [fetchCards]);
 

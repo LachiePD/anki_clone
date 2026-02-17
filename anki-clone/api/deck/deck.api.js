@@ -1,5 +1,5 @@
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-
+import {MOCK_DECKS} from '../mockData.js';
 export const submitNewDeck = async (deckName) => {
   const response = await fetch(`${apiUrl}/createdeck`, {
     method: "POST",
@@ -19,6 +19,8 @@ export const submitNewDeck = async (deckName) => {
 };
 
 export const getDecks = async () => {
+	console.log("WE AREE IN MOCK MODE");
+	return {response:{rows:MOCK_DECKS}, message:"MOCK"};
   const result = await fetch(`${apiUrl}/getAllDecks`, {
     method: "GET",
     credentials: "include",
@@ -31,6 +33,7 @@ export const getDecks = async () => {
   if (!result.ok) {
     return { error: data.error || "Something went wrong in getDecks api call" };
   }
+	console.log(await data);
   return data;
 };
 

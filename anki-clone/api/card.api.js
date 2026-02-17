@@ -1,6 +1,12 @@
+import {MOCK_CARDS} from './mockData.js';
+
+
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export const fetchByDeck = async (deckId) => {
+	console.log('WE ARE IN DEV MODE, MOCK DATA BEING SENT FROM CARD.API.KS');
+	return {cards:MOCK_CARDS , message: 'devMode'}
+
   const response = await fetch(
     `${apiUrl}/fetchCardsForDeck?deck_id=${deckId}`,
     {
