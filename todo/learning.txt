@@ -9,3 +9,7 @@ Deep dive into Next.js server/client boundaries for state management.
 
 
 have a look into Clean Code stuff, writing functions in a way where if the parameter form changes, it wont need heaps of different changes in the code to keep running.
+
+next project: 
+-react testing library
+-JEST
