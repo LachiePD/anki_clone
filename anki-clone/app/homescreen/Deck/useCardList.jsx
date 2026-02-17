@@ -5,6 +5,8 @@ import { useState, useEffect, useCallback } from "react";
 export const useCardList = (deckInfo) => {
   const [cardList, setCardList] = useState([]);
 
+  const [selectedCard, setSelectedCard] = useState(0);
+
   const fetchCards = useCallback(async () => {
     if (!deckInfo) return;
     const data = await fetchByDeck(deckInfo.id);
@@ -12,7 +14,7 @@ export const useCardList = (deckInfo) => {
   }, [deckInfo.id]);
 
   useEffect(() => {
-    if (!deckInfo.id) return; 
+    if (!deckInfo.id) return;
     fetchCards();
   }, [fetchCards]);
 

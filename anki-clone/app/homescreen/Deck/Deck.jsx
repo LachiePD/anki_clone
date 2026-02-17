@@ -5,7 +5,6 @@ import { useCardList } from "./useCardList.jsx";
 
 import Practice from './Practice.jsx';
 import Editor from "./Editor.jsx";
-import Flashcard from './Card/Flashcard.jsx';
 
 const Deck = ({ deckInfo }) => {
   const { cardList, setCardList, handleNewCard } = useCardList(deckInfo);
@@ -16,11 +15,14 @@ const Deck = ({ deckInfo }) => {
 
   return (
     <div>
+	  {deckInfo.name}
       {mode === "editing" && (
         <Editor cardList={cardList} handleNewCard={handleNewCard} />
       )}
       {mode === "practicing" && (
-	      <Practice cardList={cardList}/>
+	      <Practice
+	      key={deckInfo.id}
+	      cardList={cardList}/>
       )}
     </div>
   );

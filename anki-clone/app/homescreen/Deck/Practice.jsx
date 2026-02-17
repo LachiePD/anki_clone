@@ -1,14 +1,24 @@
 import {useState} from 'react';
+import Flashcard from './Flashcard/Flashcard.jsx';
 
 
+const Practice = ({cardList}) =>{
 
-const Practice = () =>{
+	const [activeCardIndex, setActiveCardIndex] = useState(0);
 
-	const [cardList, setCardList] = useState([]);
+	const buildCard = () =>{
+		
+		const data = cardList[activeCardIndex];
+
+		return (
+			<Flashcard data={data}/>
+		);
+
+	}
 
 	return(
 		<div>
-		this is the practice component
+		{buildCard()}
 		</div>)
 
 }

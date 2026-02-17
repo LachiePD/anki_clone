@@ -33,7 +33,7 @@ const Page = () => {
         <div
           className={"flex justify-center bg-blue-200   w-full h-30 mx-auto"}
         >
-          <h1>sticky brain</h1>
+          <h1> my sticky brain :)</h1>
         </div>
         {selectedDeck ? (
           <Deck key={selectedDeck.id} deckInfo={selectedDeck} />
