@@ -1,0 +1,20 @@
+ARCHITECTURE AND API
+
+Refactor backend to return deck data directly instead of data.response.rows.
+
+Add username data validation checks inside AuthServices.fetchUser.
+
+Move areCredentialsValid utility from the factory into the AuthService.
+
+Implement backend service-level error handling for duplicate deck names.
+
+Wire auth middleware directly into routes within the composition root.
+
+useDeckList probably needs to become a context. Its getting difficult to deal with, but at the moment we're not too sure what Library will look like, it may lose its deckList manipulation ability.
+
+the back isnt consitent enough, data structures always look different and that.
+
+
+there needs to be a middleware to handle assertData() for the controllers. It will be used by all of them , will stop the need for repeating the import and use of  assertData() function
+
+need to create a helper function in the  Service layer to check for valid response. 

@@ -1,0 +1,12 @@
+URGENT AND IMMEDIATE
+
+
+need to create a <Card/> component that will store the card info to be shown
+
+Create a global reusable Button component to be used across all pages.
+
+Refactor homescreen/page.js by moving deck state into a useDeckLibrary hook.
+
+Implement loading state indicators for all asynchronous data fetching.
+
+Add a dropdown menu to library decks for delete and edit actions.

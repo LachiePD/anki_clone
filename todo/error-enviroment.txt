@@ -1,0 +1,7 @@
+ERROR HANDLING AND REFINEMENT
+
+Create a global ErrorContext and useError hook for centralized notifications.
+
+Define which layers handle data duplicates versus operational errors.
+
+Uncomment and implement standardized error handling in homescreen/page.js.
