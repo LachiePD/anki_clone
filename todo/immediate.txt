@@ -3,8 +3,6 @@ URGENT AND IMMEDIATE
 
 
 
-Create functionality where the user can input whether the card has been studied or was incorrect.
-Add to Flashcard to ability to call cardIncrement, move to the next card.
 
 Flashcard.jsx probably will need different modes, or at least an interface for the user to input whether or not their answer was correct
 Create a global reusable Button component to be used across all pages.

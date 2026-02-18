@@ -33,7 +33,7 @@ const Page = () => {
           <Creator createNewDeck={deckListActions.createNewDeck} />
         )}
       </div>
-    </div>
+	    </div>
   );
 };
 

@@ -6,9 +6,9 @@ class DatabaseConnection {
   constructor() {
     this.pool = new Pool({
       connectionString: process.env.CONNECTION_STRING,
-      ssl: {
+      /*ssl: {
         rejectUnauthorized: false,
-      },
+      },*/
 	    connectionTimeoutMillis: 10000,
     });
   }
