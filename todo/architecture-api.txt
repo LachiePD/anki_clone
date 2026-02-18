@@ -1,5 +1,6 @@
 ARCHITECTURE AND API
 
+we should think about creating a list object to render stuff like flashCard list, deck list. it will be helpful
 Refactor backend to return deck data directly instead of data.response.rows.
 
 Add username data validation checks inside AuthServices.fetchUser.
