@@ -9,8 +9,6 @@ Add to Flashcard to ability to call cardIncrement, move to the next card.
 
 Create a global reusable Button component to be used across all pages.
 
-Refactor homescreen/page.js by moving deck state into a useDeckLibrary hook.
-
 Implement loading state indicators for all asynchronous data fetching.
 
 Add a dropdown menu to library decks for delete and edit actions.
