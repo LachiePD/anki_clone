@@ -13,7 +13,7 @@ class Server {
   start() {
     this.setup();
     this.app.listen(this.port, () => {
-      console.log(`✅ Server is truly ready on port ${this.port}`);
+      console.log(`Server is truly ready on port ${this.port}`);
     });
   }
 

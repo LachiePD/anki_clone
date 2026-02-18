@@ -5,17 +5,11 @@ import { Pool } from "pg";
 class DatabaseConnection {
   constructor() {
     this.pool = new Pool({
-      user: process.env.PGUSER,
-      password: process.env.PGPASSWORD,
-      host: process.env.PGHOST,
-      port: process.env.PGPORT,
-      database: process.env.PGDATABASE,
-      max: 10,
-      idleTimeoutMillis: 30000, // default 30s
-      connectionTimeoutMillis: 10000, // wait up to 10s for connection
+      connectionString: process.env.CONNECTION_STRING,
       ssl: {
         rejectUnauthorized: false,
       },
+	    connectionTimeoutMillis: 10000,
     });
   }
 
