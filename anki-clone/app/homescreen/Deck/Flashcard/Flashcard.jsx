@@ -4,7 +4,7 @@
 
 const Card = ({data}) =>{
 
-const { front = "", back = "" } = data || {};
+const {front, back} = data || {};
 	return(
 		<div>
 		{front}

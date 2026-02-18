@@ -1,27 +1,16 @@
-import {useState} from 'react';
-import Flashcard from './Flashcard/Flashcard.jsx';
+import { useState } from "react";
+import Flashcard from "./Flashcard/Flashcard.jsx";
 
+const Practice = ({ cardList }) => {
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
 
-const Practice = ({cardList}) =>{
+  const buildCard = () => {
+    const data = cardList[activeCardIndex];
 
-	const [activeCardIndex, setActiveCardIndex] = useState(0);
+    return <Flashcard data={data} />;
+  };
 
-	const buildCard = () =>{
-		
-		const data = cardList[activeCardIndex];
-
-		return (
-			<Flashcard data={data}/>
-		);
-
-	}
-
-	return(
-		<div>
-		{buildCard()}
-		</div>)
-
-}
-
+  return <div>{buildCard()}</div>;
+};
 
 export default Practice;

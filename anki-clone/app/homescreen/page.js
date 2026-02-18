@@ -10,8 +10,7 @@ import Deck from "./Deck/Deck.jsx";
 
 const Page = () => {
   const { user, setUser } = useContext(UserContext);
-  const { deckList, setDeckList, handleRemoveDeck, createNewDeck } =
-    useDeckList();
+  const { deckList, actions: deckListActions } = useDeckList();
   const [selectedDeck, setSelectedDeck] = useState(null);
 
   const deckSelectionEvent = (id) => {
@@ -22,12 +21,8 @@ const Page = () => {
   return (
     <div className={"flex bg-green-200 w-full h-screen p-4 flex-row wrap"}>
       <SideBar>
-        <Library
-          removeDeck={handleRemoveDeck}
-          deckList={deckList}
-          setDeckList={setDeckList}
-          deckSelectionEvent={deckSelectionEvent}
-        />
+        <Library deckListActions={deckListActions} deckList={deckList} 
+	  deckSelectionEvent={deckSelectionEvent}/>
       </SideBar>
       <div className={"flex w-full flex-col h-full rounded  bg-purple-200 "}>
         <div
@@ -38,7 +33,7 @@ const Page = () => {
         {selectedDeck ? (
           <Deck key={selectedDeck.id} deckInfo={selectedDeck} />
         ) : (
-          <Creator createNewDeck={createNewDeck} />
+          <Creator createNewDeck={deckListActions.createNewDeck} />
         )}
       </div>
     </div>

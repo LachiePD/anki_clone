@@ -8,7 +8,7 @@ export const useDeckMode = () => {
   const startInspecting = () => setMode("inspecting");
 
   const api = {
-    mode: mode,
+    mode,
     actions: {
       startPractice: startPractice,
       startEditing: startEditing,

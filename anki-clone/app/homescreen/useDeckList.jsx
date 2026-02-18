@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getDecks, submitNewDeck, removeDeck } from "@/api/deck/deck.api.js";
+import { getDecks, submitNewDeck, removeDeck as removeDeckApi } from "@/api/deck/deck.api.js";
 export const useDeckList = () => {
   const [deckList, setDeckList] = useState([]);
   useEffect(() => {
@@ -15,12 +15,22 @@ export const useDeckList = () => {
     setDeckList(data.response.rows);
   };
 
-  const handleRemoveDeck = async (deckId) => {
-    await removeDeck(deckId);
+  const removeDeck = async (deckId) => {
+    await removeDeckApi(deckId);
     setDeckList((prev) => {
       return prev.filter((deck) => deck.id !== deckId);
     });
   };
 
-  return { deckList, setDeckList, handleRemoveDeck, createNewDeck };
+
+	const api = {
+		deckList, 
+		actions:{ fetchDecks:fetchDecks,
+		createNewDeck:createNewDeck,
+		removeDeck:removeDeck,
+		setDeckList:setDeckList,
+	},
+	}
+	
+  return api;
 };

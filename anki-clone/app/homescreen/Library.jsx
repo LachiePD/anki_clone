@@ -2,13 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { LoadingContext } from "@/app/LoadingContext.js";
 import DeckLink from "./DeckLink.jsx";
 
-const Library = ({
-  deckList,
-  setDeckList,
-  setSelectedDeck,
-  deckSelectionEvent,
-  removeDeck,
-}) => {
+const Library = ({ deckList, deckListActions, deckSelectionEvent }) => {
   const [error, setError] = useState(null);
   const { loading, setLoading } = useContext(LoadingContext);
 
@@ -17,7 +11,7 @@ const Library = ({
       return (
         <DeckLink
           deckSelectionEvent={deckSelectionEvent}
-          handleDelete={removeDeck}
+          handleDelete={deckListActions.removeDeck}
           key={deck.id}
           data={deck}
         />
@@ -25,9 +19,6 @@ const Library = ({
     });
   };
 
-  const handleDelete = (deckId) => {
-    removeDeck(deckId);
-  };
   return (
     <div>
       {error && <p> ERROR: {error}</p>}
