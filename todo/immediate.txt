@@ -2,7 +2,10 @@ URGENT AND IMMEDIATE
 
 
 
-Create an interface so the user can decide whether they want to edit a deck or just go straight into practice
+
+make the <Flashcard/> component only show one side of the card at once.
+Create functionality where the user can input whether the card has been studied or was incorrect.
+Add to Flashcard to ability to call cardIncrement, move to the next card.
 
 Create a global reusable Button component to be used across all pages.
 
