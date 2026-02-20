@@ -1,7 +1,0 @@
-in Editor.jsx, then state [front, setFront] , [back, setBack] should really be one state called cardData = {front:"", back:""}
-
-
-in Deck.jsx, the <Editor/> component has a handleNewFlash card. This is a sign that deckList should be in a context, as no other deckMode needs this? actually, practice will want to edit cards, so handleNewFlash card should maybe be made dumber? I'm not sure. All signs point to deckList in context
-
-
-In <Deck/> , the <Inspect/> component should probably be just what the component renders by default
