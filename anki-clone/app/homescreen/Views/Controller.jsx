@@ -10,7 +10,7 @@ import Inspect from "./Inspect.jsx";
 const Controller = () => {
 
   const { selectedDeck } = useDeckList();
-  const activeDeck = useActiveDeck();
+  const activeDeck = useActiveDeck(selectedDeck);
   const mode = useDeckMode();
 
   useEffect(() => {
