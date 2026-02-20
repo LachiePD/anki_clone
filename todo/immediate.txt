@@ -1,8 +1,22 @@
-URGENT AND IMMEDIATE
-
+next TODO.
 
 
 make deckList a context, selectedDeck and deckList are getting too hard to look at ✓
+
+in home screen, css:
+-fix sidebar, give it normal colors, have it reach to end of the screen. ✓
+-title, center title. maybe put it in top right of the screen or top left. It doesnt need to take up the whole top of the screen.✓
+
+
+-the main area. Currently defaults to create a deck. Have a think about this, it could be used to point user to select a deck.--do later--
+
+-have library have a header, DECKLIST. 
+-remove borders around decks in the sidebard. 
+-center the Creator component in homescreen
+
+-look at different fonts to use
+
+
 
 remove the ContextProvider at the top of the app. I dont think I even use it , and its interfeering with doing the css of the app.
 
