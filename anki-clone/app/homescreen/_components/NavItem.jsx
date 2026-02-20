@@ -1,7 +1,5 @@
 
-
-const DeckLink= ({ data, handleDelete, deckSelectionEvent}) =>{
-
+const NavItem= ({ data, handleDelete, deckSelectionEvent}) =>{
 
 		return(
 		<div className={'border border-black p-5 m-5'}>
@@ -26,4 +24,4 @@ const DeckLink= ({ data, handleDelete, deckSelectionEvent}) =>{
 }
 
 
-export default DeckLink;
+export default NavItem;

@@ -1,13 +1,12 @@
 "use client";
-
 import { useState } from "react";
-import { useDeckList } from "./DeckListContext.jsx";
+import { useDeckList } from "../DeckListContext.jsx";
+
+import Card from "@/components/Card.jsx";
 const Creator = ({ createNewDeck }) => {
   const [deckName, setDeckName] = useState("");
-
   const deckList = useDeckList();
 
-  const [error, setError] = useState(null);
   const handleChange = (e) => {
     setDeckName(e.target.value);
   };
@@ -17,7 +16,7 @@ const Creator = ({ createNewDeck }) => {
     setDeckName("");
   };
   return (
-    <div className={" flex bg-gray-200 m-4 h-full rounded p-6 justify-center"}>
+    <Card>
       <textarea
         className={"h-[30%]"}
         onChange={(e) => handleChange(e)}
@@ -31,8 +30,7 @@ const Creator = ({ createNewDeck }) => {
       >
         submit
       </button>
-      {error && <p>{error.message}</p>}
-    </div>
+    </Card>
   );
 };
 
