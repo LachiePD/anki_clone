@@ -11,7 +11,7 @@ const Editor = ({ startPractice }) => {
 
   const handleSubmit = async () => {
     const card = { front, back };
-    const response = await cardList.actions.handleNewFlashcard(card);
+    const response = await handleNewFlashcard(card);
 
     setFront("");
     setBack("");

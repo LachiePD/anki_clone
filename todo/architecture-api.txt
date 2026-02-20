@@ -1,5 +1,8 @@
 ARCHITECTURE AND API
 
+rename useDeckList to useDeckListContext(), in DeckListContext.jsx'; its confusing the way it is right now
+
+think about renaming /Decks to something else in front end. Could be something like Views or something. Deck is meh name
 we should think about creating a list object to render stuff like flashCard list, deck list. it will be helpful
 Refactor backend to return deck data directly instead of data.response.rows.
 

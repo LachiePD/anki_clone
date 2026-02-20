@@ -1,4 +1,6 @@
 The "As a..., I want..., So that..." Template
 If you ever get stuck, just fill in these blanks. The "So that" is the most important part because it tells you what the UI needs to look like.
 
-a user want to practice a deck, gets a card wrong, then reviews the card, tries again, then moves onto the next one
+a user want to practice a deck, gets a card wrong, then reviews the card, tries again, then moves onto the next one  ✓
+
+a user has a deck selected, then selects another deck

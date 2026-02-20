@@ -6,13 +6,12 @@ class DatabaseConnection {
   constructor() {
     this.pool = new Pool({
       connectionString: process.env.CONNECTION_STRING,
-      /*ssl: {
-        rejectUnauthorized: false,
-      },*/
+ //     ssl: {
+   //     rejectUnauthorized: false,
+     // },//comment out ssl for docker container to work
 	    connectionTimeoutMillis: 10000,
     });
   }
-
   async query(text, params) {
     try {
       const result = await this.pool.query(text, params);

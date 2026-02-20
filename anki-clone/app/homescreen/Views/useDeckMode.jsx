@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const useDeckMode = () => {
-  const [mode, setMode] = useState("inspecting");
+  const [current, setCurrent] = useState("inspecting");
 
-  const startPractice = () => setMode("practicing");
-  const startEditing = () => setMode("editing");
-  const startInspecting = () => setMode("inspecting");
+  const startPractice = () => setCurrent("practicing");
+  const startEditing = () => setCurrent("editing");
+  const startInspecting = () => setCurrent("inspecting");
 
   const api = {
-    mode,
+    current,
     actions: {
       startPractice: startPractice,
       startEditing: startEditing,

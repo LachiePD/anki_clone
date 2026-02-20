@@ -2,16 +2,9 @@ URGENT AND IMMEDIATE
 
 
 
+make deckList a context, selectedDeck and deckList are getting too hard to look at ✓
 
+remove the ContextProvider at the top of the app. I dont think I even use it , and its interfeering with doing the css of the app.
 
-Flashcard.jsx probably will need different modes, or at least an interface for the user to input whether or not their answer was correct
-Create a global reusable Button component to be used across all pages.
-
-Implement loading state indicators for all asynchronous data fetching.
-
-Add a dropdown menu to library decks for delete and edit actions.
-
-
-the data being returned from the front-end calls arnt uniform. Some need to access nested properties to get the data. They should all be {data:"", message:""}
 
 

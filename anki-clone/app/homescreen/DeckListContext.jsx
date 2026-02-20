@@ -6,8 +6,6 @@ import {
   removeDeck as removeDeckApi,
 } from "@/api/deck/deck.api.js";
 
-
-
 const DeckListContext = createContext();
 
 export const DeckListProvider = ({ children }) => {
@@ -61,6 +59,5 @@ export const DeckListProvider = ({ children }) => {
     </DeckListContext.Provider>
   );
 };
-
 
 export const useDeckList = () => useContext(DeckListContext);
