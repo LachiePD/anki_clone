@@ -11,8 +11,8 @@ const page = () => {
     <main className={"flex w-full"}>
       <SideBar />
       <section className={" flex flex-1 flex-col min-h-screen p-5 bg-primary "}>
-        //TODO , make a directive for section headers
-        <header>
+	  {       /*TODO , make a directive for section headers*/}
+        <header className={'min-h-24'}>
           <h1 className={"text-3xl "}>my sticky brain :)</h1>
         </header>
         <div
