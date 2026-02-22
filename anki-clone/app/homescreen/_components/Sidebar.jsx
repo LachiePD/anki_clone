@@ -7,19 +7,20 @@ const SideBar = () => {
 
   const renderDecks = () => {
     return deckList.decks.map((deck) => (
-      <NavItem
-        deckSelectionEvent={deckList.actions.selectDeckById}
-        handleDelete={deckList.actions.removeDeck}
-        key={deck.id}
-        data={deck}
-      />
+      <li key={deck.id}>
+        <NavItem
+          deckSelectionEvent={deckList.actions.selectDeckById}
+          handleDelete={deckList.actions.removeDeck}
+          data={deck}
+        />
+      </li>
     ));
   };
   return (
-    <main className={" bg-secondary p-4 min-w-76"}>
+    <nav className={" bg-secondary p-4 min-w-76"}>
       <Subheader>Library</Subheader>
-      {renderDecks()}
-    </main>
+      <ul>{renderDecks()}</ul>
+    </nav>
   );
 };
 
