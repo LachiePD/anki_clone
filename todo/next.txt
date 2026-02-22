@@ -8,14 +8,13 @@
 -have library have a header, DECKLIST.✓ 
 -center the Creator component in homescreen ✓
 -change the fonts that is being used. ✓
+-/homescreen/page.js. Currently decides if it renders <Controller/> or <Creator/> , controller should do this.✗
+└problem was that the Controller was named incorrectly, now its DeckController. Creator and DeckController are concerned with different things
+-navItems in libarary need to be layed out properly, in column order.✓
+-navItems should have no border but onhover reacts✓
+-round the edges for NavItems. ✓
 
--/homescreen/page.js. Currently decides if it renders <Controller/> or <Creator/> , controller should do this.✗, problem was that the Controller was named incorrectly, now its DeckController. Creator and DeckController are concerned with different things
-
-
--navItems in libarary need to be layed out properly, in column order.
--navItems should have no border but onhover reacts
--round the edges.
-
+-selectedDeck needs to become a context, this will allow the sidebar to interact with it correctly, and allow creating a new deck event to come from sidebar and stage
 
 refactor:
 -activeDeck() hook should become a context, then pull the selectedDeck functionality out of DeckListContext.
