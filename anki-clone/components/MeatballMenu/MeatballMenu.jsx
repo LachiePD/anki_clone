@@ -7,11 +7,11 @@ const MeatBallMenu = ({ id, children }) => {
   const meatballService = useMeatball();
 
   return (
-    <div id={id} ref={meatballService.menuRef}>
+    <div  id={id} ref={meatballService.menuRef}>
       {!meatballService.active && (
         <EllipsisHorizontalIcon
           onClick={meatballService.setActive}
-          className={"icon"}
+	      className={'icon'}
         />
       )}
 
