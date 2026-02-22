@@ -1,16 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 @import "tailwindcss";
 
 @theme {
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
   --color-primary: #ffffff;
   --color-secondary: #e9eef6;
   --color-accent: #c4e2e6;
   --color-secondary-dark: #d1dbe9;
 }
-
+@layer base {
+  body {
+    font-family: var(--font-inter);
+  }
+}
 @layer components {
-	.sidebar{
-		@apply bg-secondary min-w-[20em]
-	}
+  .sidebar {
+    @apply bg-secondary min-w-[20em];
+  }
   .card {
     @apply bg-primary shadow-xl border border-secondary rounded-2xl;
   }
