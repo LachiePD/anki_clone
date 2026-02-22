@@ -6,7 +6,7 @@ import Practice from "./Practice.jsx";
 import Editor from "./Editor.jsx";
 import Inspect from "./Inspect.jsx";
 
-const Controller = () => {
+const DeckController = () => {
   const { selectedDeck } = useDeckList();
   const activeDeck = useActiveDeck(selectedDeck);
   const mode = useDeckMode();
@@ -34,4 +34,4 @@ const Controller = () => {
   return <div>{renderMode()}</div>;
 };
 
-export default Controller;
+export default DeckController;
