@@ -14,7 +14,13 @@
 -navItems should have no border but onhover reacts✓
 -round the edges for NavItems. ✓
 
+
+-create directives for buttons
+-<Creator/>  has 2 card components
+-<Creator input needs to be positioned properly at bottom of parent.
+-Input needs to bemore obvious, currently too hard to tell what its meant to do
 -selectedDeck needs to become a context, this will allow the sidebar to interact with it correctly, and allow creating a new deck event to come from sidebar and stage
+-fix the bug where the deck doesnt update properly after a new flashcard has been added.
 
 refactor:
 -activeDeck() hook should become a context, then pull the selectedDeck functionality out of DeckListContext.
