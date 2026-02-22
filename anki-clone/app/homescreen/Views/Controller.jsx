@@ -8,14 +8,9 @@ import Editor from "./Editor.jsx";
 import Inspect from "./Inspect.jsx";
 
 const Controller = () => {
-
   const { selectedDeck } = useDeckList();
   const activeDeck = useActiveDeck(selectedDeck);
   const mode = useDeckMode();
-
-  useEffect(() => {
-    mode.actions.startInspecting();
-  }, [selectedDeck]);
 
   const renderMode = () => {
     switch (mode.current) {
