@@ -16,7 +16,7 @@ const page = () => {
           <h1 className={"text-3xl "}>my sticky brain :)</h1>
         </header>
         <div
-          className={"flex-1 flex items-center justify-center  "}
+          className={"flex-1 flex justify-center  px-40 "}
         >
           <Card >{deckList.selectedDeck ? <DeckController key={deckList.selectedDeck.id}/> : <Creator />}</Card>
         </div>
