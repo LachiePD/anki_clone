@@ -4,10 +4,14 @@
   --color-primary: #ffffff;
   --color-secondary: #e9eef6;
   --color-accent: #c4e2e6;
+--color-secondary-dark: #d1dbe9;
 }
 
 @layer components {
   .card {
     @apply bg-primary shadow-xl border border-secondary rounded-2xl;
+  }
+  .icon{
+	  @apply hover:bg-secondary-dark w-[1.2em] h-[1.2em];
   }
 }

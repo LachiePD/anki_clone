@@ -10,6 +10,7 @@ const DeckListContext = createContext();
 
 export const DeckListProvider = ({ children }) => {
   const [decks, setDecks] = useState([]);
+	//TODO remove this, and make useActiveDeck a context, so this logic can live there instead. 
   const [selectedDeck, setSelectedDeck] = useState(null);
 
   useEffect(() => {

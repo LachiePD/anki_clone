@@ -1,10 +1,9 @@
-import CreateUserForm from "@/components/CreateUserForm.jsx";
 
-const Card = ({ header, form }) => {
+const Card = ({ header, children }) => {
   return (
-    <div className={"card"}>
+    <div className={"card w-fit"}>
       <h1 className={"text-2xl "}>{header}</h1>
-      {form}
+      {children}
     </div>
   );
 };

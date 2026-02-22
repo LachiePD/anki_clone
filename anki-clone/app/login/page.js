@@ -5,8 +5,9 @@ import LoginForm from "@/app/login/LoginForm.jsx";
 const Page = () => {
   return (
     <div className={"flex p-5 mx-auto"}>
-      <Card form={<LoginForm />} header={"LOGIN"} />
-
+      <Card  header={"LOGIN"} >
+	  <LoginForm/>
+	  </Card>
     </div>
   );
 };

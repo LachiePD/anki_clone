@@ -1,16 +1,14 @@
 
 import { attemptLogin } from "@/api/auth/auth.js";
-import { UserContext } from "../UserContext.js";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 
 const LoginForm = () => {
-  const { user, setUser } = useContext(UserContext);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const router = useRouter();
+
 
   const handleChange = (e, credential) => {
     switch (credential) {
@@ -25,16 +23,12 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null);
     const result = await attemptLogin({ userName, password });
 
     if (result.status !== 200) {
-      console.log("Problem with login");
-      console.log(result.status);
-      setError(result.message);
+	    throw new Error
       return;
     }
-    setUser(userName);
     router.push("/homescreen");
   };
 
