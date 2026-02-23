@@ -1,3 +1,25 @@
+
+
+
+
+TODO:
+
+Add functionality to edit a card in a deck.
+Fix the practice card look , currently looks very poor.
+
+
+
+
+
+
+
+
+
+
+
+
+DONE.
+retired - this was a bad way to think about things. 
 -make deckList a context, selectedDeck and deckList are getting too hard to look at ✓
 -fix sidebar, give it normal colors, have it reach to end of the screen. ✓
 -title, center title. maybe put it in top right of the screen or top left. It doesnt need to take up the whole top of the screen.✓
@@ -17,16 +39,5 @@
 -create directives for buttons✓
 
 
--<Creator input needs to be positioned properly at bottom of parent.
--Input needs to bemore obvious, currently too hard to tell what its meant to do
--selectedDeck needs to become a context, this will allow the sidebar to interact with it correctly, and allow creating a new deck event to come from sidebar and stage
--fix the bug where the deck doesnt update properly after a new flashcard has been added.
 
-refactor:
--activeDeck() hook should become a context, then pull the selectedDeck functionality out of DeckListContext.
--rename DeckListContext, perhaps pull the useDeckList() hook out of it and just reference that.
 
-feature
--the main area. Currently defaults to create a deck. Have a think about this, it could be used to point user to select a deck.
--needs responsiveness to jwt token expiring.
--responsiveness to loading state.
