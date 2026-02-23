@@ -9,34 +9,23 @@ const inputStyle =
 
 const CreateUserForm = () => {
   const router = useRouter();
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [secondPassword, setSecondPassword] = useState("");
-  const [error, setError] = useState(null);
+  const [formData, setFormData] = useState({
+    userName: "",
+    password: "",
+    secondPassword: "",
+  });
 
-  const handleChange = (e, stateName) => {
-    switch (stateName) {
-      case "userName":
-        setUserName(e.target.value);
-        break;
-      case "password":
-        setPassword(e.target.value);
-        break;
-      case "secondPassword":
-        setSecondPassword(e.target.value);
-        break;
-      default:
-        console.log("error in form switch statement");
-        break;
-    }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null);
     const result = await createUser({ userName, password });
 
     if (result.status !== 200) {
-      setError(result.message);
+      console.log("Create user failed");
       return;
     }
 
@@ -44,36 +33,34 @@ const CreateUserForm = () => {
   };
 
   return (
-    <div>
-      <form
-        className={"flex flex-col gap-4 items-center"}
-        onSubmit={(e)=>handleSubmit(e)}
-      >
-        <input
-          className={inputStyle}
-          placeholder={"Enter your username"}
-          onChange={(e) => handleChange(e, "userName")}
-        />
-        <input
-          className={inputStyle}
-          placeholder={"Enter your password"}
-          type={"password"}
-          onChange={(e) => handleChange(e, "password")}
-        />
-        <input
-          className={inputStyle}
-          placeholder={"Enter password again"}
-          type={"password"}
-          onChange={(e) => handleChange(e, "secondPassword")}
-        />
-        <button
-	  className={"button"}
-          type={"submit"}
-        >
-          Create User
-        </button>
-      </form>
-    </div>
+    <form
+      className={"flex flex-col gap-4 items-center"}
+      onSubmit={ handleSubmit}
+    >
+      <input
+        name={"userName"}
+        className={inputStyle}
+        placeholder={"Enter your username"}
+        onChange={ handleChange}
+      />
+      <input
+        name={"password"}
+        className={inputStyle}
+        placeholder={"Enter your password"}
+        type={"password"}
+        onChange={ handleChange}
+      />
+      <input
+        name={"secondPassword"}
+        className={inputStyle}
+        placeholder={"Enter password again"}
+        type={"password"}
+        onChange={ handleChange}
+      />
+      <button className={"button"} type={"submit"}>
+        Create User
+      </button>
+    </form>
   );
 };
 
