@@ -15,7 +15,7 @@ export const MeatballMenu = ({ id, children }) => {
           className={"icon"}
         />
       )}
-      //TODO list should be the children
+	  {/*     //TODO list should be the children*/}
       {meatballService.active && <List>{children}</List>}
     </div>
   );
