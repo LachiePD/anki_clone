@@ -19,7 +19,12 @@ Fix the practice card look , currently looks very poor.
 
 
 DONE.
-retired - this was a bad way to think about things. 
+✓Made activeDeck a context
+
+
+
+
+------retired ----- this was a bad way to think about things. 
 -make deckList a context, selectedDeck and deckList are getting too hard to look at ✓
 -fix sidebar, give it normal colors, have it reach to end of the screen. ✓
 -title, center title. maybe put it in top right of the screen or top left. It doesnt need to take up the whole top of the screen.✓

@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-const authMiddleWare =  (req, res, next) => {
+const authMiddleWare = (req, res, next) => {
   try {
     const token = req.cookies.token;
 
@@ -8,12 +8,12 @@ const authMiddleWare =  (req, res, next) => {
       return next(new Error("No token provided"));
     }
 
-    const decoded =  jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.userId = decoded.userId;
 
-    next(); 
+    next();
   } catch (err) {
-    next(err); 
+    next(err);
   }
 };
 

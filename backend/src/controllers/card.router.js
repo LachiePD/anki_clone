@@ -4,7 +4,7 @@ const assertData = (...data) => {
   const items = data.flat();
   items.forEach((item) => {
     if (!item) {
-      throw new Error("Assert data failed in cardRouter");
+      throw new Error(`Assert data failed in cardRouter ${item}`);
     }
   });
   return;
@@ -14,10 +14,11 @@ const cardRouter = ({ cardServices, authMiddleware }) => {
   const router = express.Router();
 
   router.get("/fetchCardsForDeck", authMiddleware, async (req, res) => {
-    const deckId = Number(req.query.deck_id);
-    assertData(deckId);
+    const id = Number(req.query.id);
+	  console.log(id);
+    assertData(id);
 
-    const response = await cardServices.fetchCardsForDeck(deckId);
+    const response = await cardServices.fetchCardsForDeck(id);
 
     return res
       .status(200)
@@ -25,10 +26,9 @@ const cardRouter = ({ cardServices, authMiddleware }) => {
   });
 
   router.post("/createNewCard", authMiddleware, async (req, res) => {
-    const deckId = req.body.deckInfo.id;
+    const deckId = req.body.deckId;
     const card = req.body.card;
-    const userId = req.body.deckInfo.user_id;
-
+    const userId = req.userId
     assertData([deckId, card, userId]);
 
     const response = await cardServices.createNewCard({ deckId, userId, card });

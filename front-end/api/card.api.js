@@ -3,10 +3,10 @@ import {MOCK_CARDS} from './mockData.js';
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
-export const fetchByDeck = async (deckId) => {
+export const fetchByDeck = async (id) => {
 
   const response = await fetch(
-    `${apiUrl}/fetchCardsForDeck?deck_id=${deckId}`,
+    `${apiUrl}/fetchCardsForDeck?id=${id}`,
     {
       method: "GET",
       credentials: "include",
@@ -19,12 +19,12 @@ export const fetchByDeck = async (deckId) => {
   return data;
 };
 
-export const createNewCard = async (deckInfo, card) => {
+export const createNewCard = async (deckId, card) => {
   const response = await fetch(`${apiUrl}/createNewCard`, {
     method: "POST",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ deckInfo, card }),
+    body: JSON.stringify({ deckId, card }),
   });
 
   const data = await response.json();
