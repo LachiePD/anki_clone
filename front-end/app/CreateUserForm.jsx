@@ -22,7 +22,7 @@ const CreateUserForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await createUser({ userName, password });
+    const result = await createUser({userName: formData.userName,password: formData.password});
 
     if (result.status !== 200) {
       console.log("Create user failed");
