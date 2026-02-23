@@ -16,7 +16,7 @@ const Creator = ({ createNewDeck }) => {
     setDeckName("");
   };
   return (
-    <Card>
+	  <form>
       <textarea
         className={"h-[30%]"}
         onChange={(e) => handleChange(e)}
@@ -30,7 +30,7 @@ const Creator = ({ createNewDeck }) => {
       >
         submit
       </button>
-    </Card>
+	  </form>
   );
 };
 
