@@ -12,7 +12,7 @@ const SideBar = () => {
         <NavItem
           deckSelectionEvent={deckList.actions.selectDeckById}
           handleDelete={deckList.actions.removeDeck}
-          data={deck}
+          deck={deck}
         />
       </li>
     ));
