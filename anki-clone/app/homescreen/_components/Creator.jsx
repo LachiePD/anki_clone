@@ -16,7 +16,7 @@ const Creator = ({ createNewDeck }) => {
     setDeckName("");
   };
   return (
-	  <form>
+    <form>
       <textarea
         className={"h-[30%]"}
         onChange={(e) => handleChange(e)}
@@ -26,11 +26,11 @@ const Creator = ({ createNewDeck }) => {
       <button
         type={"submit"}
         onClick={handleSubmit}
-        className={"flex h-12 w-13 rounded-full border-3 border-blue-200"}
+        className={"button"}
       >
         submit
       </button>
-	  </form>
+    </form>
   );
 };
 

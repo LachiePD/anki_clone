@@ -13,7 +13,7 @@ const page = () => {
       <Card header={"Create User!"}>
         <CreateUserForm />
         <button
-          className={"bg-amber-100  "}
+	  className={'button'}
           onClick={() => router.push("/login")}
         >
           Login

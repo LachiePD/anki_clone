@@ -5,13 +5,16 @@
   --font-inter: "Inter", ui-sans-serif,  system-ui, sans-serif;
   --color-primary: #ffffff;
   --color-secondary: #e9eef6;
-  --color-accent: #c4e2e6;
+  --color-accent: #c9e6fe;
   --color-secondary-dark: #d1dbe9;
 }
 @layer base {
   body {
     font-family: var(--font-inter);
     font-size: 20px; 
+  }
+  button{
+	 @apply bg-secondary  p-1 hover:bg-secondary-dark cursor-pointer rounded-lg active:bg-accent;
   }
 }
 @layer components {

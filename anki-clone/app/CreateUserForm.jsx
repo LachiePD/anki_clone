@@ -67,7 +67,7 @@ const CreateUserForm = () => {
           onChange={(e) => handleChange(e, "secondPassword")}
         />
         <button
-          className={" bg-blue-200 w-min rounded-full p-5 "}
+	  className={"button"}
           type={"submit"}
         >
           Create User

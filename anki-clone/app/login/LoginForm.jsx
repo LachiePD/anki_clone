@@ -55,9 +55,7 @@ const LoginForm = () => {
       <br />
       <button
         type={"submit"}
-        className={
-          "block mx-auto hover:cursor-pointer bg-gray-200 rounded border-1 active:bg-gray-700 "
-        }
+	  className={'button'}
       >
         Login
       </button>

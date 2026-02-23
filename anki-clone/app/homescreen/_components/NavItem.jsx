@@ -9,13 +9,13 @@ const NavItem = ({ data, handleDelete, deckSelectionEvent }) => {
       <MeatballMenu id={data.id}>
         <button
           onClick={() => handleDelete(data.id)}
-          className={"border border-red-200 cursor-pointer"}
+          className={"button"}
         >
           Delete
         </button>
 
         <button
-          className={"border border-green-500 cursor-pointer"}
+          className={"button"}
           onClick={() => deckSelectionEvent(data.id)}
         >
           Select

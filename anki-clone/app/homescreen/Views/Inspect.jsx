@@ -3,13 +3,13 @@ const Inspect = ({ modeActions }) => {
     <div>
       this is the inspect component
       <button
-        className={"border border-green-600 m-5"}
+        className={"button"}
         onClick={modeActions.startEditing}
       >
         Edit
       </button>
       <button
-        className={"border border-green-600 m-5"}
+        className={"button"}
         onClick={modeActions.startPractice}
       >
         Practice
