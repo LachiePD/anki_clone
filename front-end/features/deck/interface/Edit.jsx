@@ -3,15 +3,18 @@ import { useState } from "react";
 import { AddCard } from "./AddCard";
 export const Edit = () => {
   const [addingCard, setAddingCard] = useState(false);
+  const toggleAddingCard = () => {
+    setAddingCard((prev) => !prev);
+  };
   return (
     <>
       {!addingCard && (
         <>
-          <button onClick={() => setAddingCard(true)}>Add Card</button>
+          <button onClick={toggleAddingCard}>Add Card</button>
           <button>Change Deck Name</button>
         </>
       )}
-      {addingCard && <AddCard />}
+      {addingCard && <AddCard toggleAddingCard={toggleAddingCard} />}
     </>
   );
 };
