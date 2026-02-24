@@ -3,7 +3,6 @@ import { useDeckMode } from "../hooks/useDeckMode.jsx";
 import { useActiveDeck } from "../providers/ActiveDeckProvider.jsx";
 import { useDeckList } from "../providers/DeckListContext.jsx";
 import { Practice } from "./Practice.jsx";
-import { Editor } from "./Editor.jsx";
 import { Inspect } from "./Inspect.jsx";
 
 export const DeckController = () => {
@@ -13,18 +12,13 @@ export const DeckController = () => {
   const renderMode = () => {
     switch (mode.currentMode) {
       case "practicing":
-        return <Practice modeActions={mode.actions} />;
+        return <Practice />;
 
       case "editing":
-        return (
-          <Editor
-            handleNewFlashcard={activeDeck.handleNewcard}
-            startPractice={mode.actions.startPractice}
-          />
-        );
+        return <p>"We are Editing"</p>;
 
       case "inspecting":
-        return <Inspect modeActions={mode.actions} />;
+        return <Inspect />;
     }
   };
   return <div>{renderMode()}</div>;
