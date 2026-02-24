@@ -8,13 +8,14 @@ export const ActiveCardProvider = ({ children }) => {
   const [content, setContent] = useState({ front: "", back: "" });
   const [isRevealed, setRevealed] = useState(false);
 
-  const nextCard = () => {
-    const { front, back } = activeDeck.actions.drawNextCard();
-    setContent({ front, back });
-  };
   useEffect(() => {
-    activeDeck.actions.fetchCard();
-  }, []);
+    const card = activeDeck.actions.fetchCard();
+
+    if (!activeDeck.deckId || !card) return;
+
+    const { front, back } = activeDeck.actions.fetchCard();
+    setContent({ front, back });
+  }, [activeDeck.cardList]);
 
   const toggleRevealed = () => {
     setRevealed((prev) => !prev);
