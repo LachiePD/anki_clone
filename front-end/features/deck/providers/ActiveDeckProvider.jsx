@@ -10,7 +10,7 @@ export const ActiveDeckProvider = ({ children }) => {
   const [cardList, setCardList] = useState([]);
   const [selectedCard, setSelectedCard] = useState(0);
   const deckList = useDeckList();
-  const deckMode = useDeckMode();
+  const mode = useDeckMode();
 
   useEffect(() => {
     fetchCards();
@@ -32,6 +32,7 @@ export const ActiveDeckProvider = ({ children }) => {
   };
 
   const value = {
+    mode,
     cardList,
     deckId,
     actions: {
