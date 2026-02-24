@@ -1,3 +1,4 @@
+"use client";
 import { createContext, useContext, useState, useEffect } from "react";
 import { useActiveDeck } from "@/features/deck/index";
 export const ActiveCardContext = createContext();

@@ -1,6 +1,7 @@
-import { useFlashcard } from "./useFlashcard";
+import { useActiveCard } from "./providers/ActiveCardProvider";
+
 export const Flashcard = () => {
-  const card = useFlashcard();
+  const card = useActiveCard();
   const renderRevealed = () => {
     return (
       <>
