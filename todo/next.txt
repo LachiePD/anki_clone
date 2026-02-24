@@ -4,6 +4,8 @@
 
 TODO:
 
+have <Deck/> show properly in the <Stage/>
+have the interface and <Deck/> working in sync.
 Add functionality to edit a card in a deck.
 Fix the practice card look , currently looks very poor.
 
