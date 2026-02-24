@@ -1,6 +1,7 @@
 import { useActiveCard } from "@/features/flashcard/index";
 
 export const Practice = () => {
+  const activeCard = useActiveCard();
   return (
     <>
       <button onClick={activeCard.toggleRevealed}>Try Again</button>

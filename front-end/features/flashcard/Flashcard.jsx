@@ -12,7 +12,7 @@ export const Flashcard = () => {
   };
   return (
     <>
-      QUESTION: {card.content.front}
+      hi QUESTION: {card.content.front}
       <br />
       {card.isRevealed && renderRevealed()}
     </>

@@ -5,12 +5,10 @@ import {
   Stage,
   Interface,
 } from "@/features/deck/index.js";
-import { useFlashcard } from "@/features/flashcard/index";
 import { Card } from "@/components/ui/Card.jsx";
 import SideBar from "@/features/Sidebar.jsx";
 
 const page = () => {
-  const activeCard = useFlashcard();
   return (
     <main className={"flex w-full"}>
       <SideBar />
@@ -22,9 +20,9 @@ const page = () => {
         <header className={"min-h-24"}>
           <h1 className={"text-3xl "}>my sticky brain :)</h1>
         </header>
-        <Stage activeCard={activeCard} />
+        <Stage />
 
-        <Interface activeCard={activeCard} />
+        <Interface />
       </section>
     </main>
   );
