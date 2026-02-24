@@ -8,10 +8,10 @@ import { Inspect } from "./Inspect.jsx";
 
 export const DeckController = () => {
   const activeDeck = useActiveDeck();
-  const mode = useDeckMode();
+  const mode = activeDeck.mode;
 
   const renderMode = () => {
-    switch (mode.current) {
+    switch (mode.currentMode) {
       case "practicing":
         return (
           <Practice modeActions={mode.actions}  />
