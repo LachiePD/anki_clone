@@ -5,33 +5,23 @@ export const ActiveCardContext = createContext();
 
 export const ActiveCardProvider = ({ children }) => {
   const activeDeck = useActiveDeck();
-  const [content, setContent] = useState({ front: "", back: "" });
   const [isRevealed, setRevealed] = useState(false);
 
-  useEffect(() => {
-    const card = activeDeck.actions.fetchCard();
+  const card = activeDeck.actions.fetchCard();
+  let content = { front: "No Card", back: "" };
 
-    if (!activeDeck.deckId || !card) return;
-
-    handleNewCard(card);
-  }, [activeDeck.cardList]);
-
-  const handleNewCard = (card) => {
-    const { front, back } = card;
-    setContent({ front, back });
-  };
-
+  if (card && activeDeck.deckId) {
+    content = {
+      front: card.front,
+      back: card.back,
+    };
+  }
   const nextCard = () => {
-    const card = activeDeck.actions.drawNextCard();
-    if (!isValidCard(card)) return;
-    handleNewCard(card);
+    activeDeck.actions.drawNextCard();
+    setRevealed(false);
   };
 
-  const isValidCard = (card) => !!card;
-
-  const toggleRevealed = () => {
-    setRevealed((prev) => !prev);
-  };
+  const toggleRevealed = () => setRevealed((prev) => !prev);
 
   const value = { content, isRevealed, toggleRevealed, nextCard };
 
