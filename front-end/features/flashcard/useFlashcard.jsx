@@ -8,6 +8,7 @@ export const useFlashcard = () => {
 
   const nextCard = () => {
     const card = activeDeck.actions.drawNextCard();
+    setContent({ front: card.front, back: card.back });
   };
   useEffect(() => {
     nextCard();
