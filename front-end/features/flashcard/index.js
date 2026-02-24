@@ -1,2 +1,2 @@
 export { Flashcard } from "./Flashcard.jsx";
-export { useFlashcard } from "./useFlashcard.jsx";
+export { useActiveCard } from "./providers/ActiveCardProvider.jsx";
