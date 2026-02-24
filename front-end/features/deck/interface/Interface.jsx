@@ -1,3 +1,5 @@
+"use client";
+import { useEffect } from "react";
 import { Card } from "@/components/ui/Card";
 import { Creator } from "./Creator";
 import { useActiveDeck } from "../providers/ActiveDeckProvider";

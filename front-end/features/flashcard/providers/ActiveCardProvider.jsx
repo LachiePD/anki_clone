@@ -21,7 +21,7 @@ export const ActiveCardProvider = ({ children }) => {
     setRevealed((prev) => !prev);
   };
 
-  const value = { content, toggleRevealed };
+  const value = { content, isRevealed, toggleRevealed };
 
   return (
     <ActiveCardContext.Provider value={value}>
