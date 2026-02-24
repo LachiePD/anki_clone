@@ -13,18 +13,21 @@ export const ActiveCardProvider = ({ children }) => {
 
     if (!activeDeck.deckId || !card) return;
 
+    handleNewCard(card);
+  }, [activeDeck.cardList]);
+
+  const handleNewCard = (card) => {
     const { front, back } = activeDeck.actions.fetchCard();
     setContent({ front, back });
-  }, [activeDeck.cardList]);
+  };
 
   const nextCard = () => {
     const card = activeDeck.actions.drawNextCard();
-    if (card === null) {
-      return;
-    }
-    const { front, back } = card;
-    setContent({ front, back });
+    if (!isValidCard(card)) return;
+    handleNewCard(card);
   };
+
+  const isValidCard = (card) => !!card;
 
   const toggleRevealed = () => {
     setRevealed((prev) => !prev);
