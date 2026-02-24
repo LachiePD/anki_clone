@@ -6,16 +6,16 @@ export const useFlashcard = () => {
   const [content, setContent] = useState({ front: "", back: "" });
   const [isRevealed, setRevealed] = useState(false);
 
-  const buildCard = () => {
-    const card = activeDeck.drawNextCard();
+  const nextCard = () => {
+    const card = activeDeck.actions.drawNextCard();
   };
   useEffect(() => {
-    buildCard();
+    nextCard();
   }, []);
 
   const toggleRevealed = () => {
     setRevealed((prev) => !prev);
   };
 
-  return {};
+  return { content, toggleRevealed };
 };
