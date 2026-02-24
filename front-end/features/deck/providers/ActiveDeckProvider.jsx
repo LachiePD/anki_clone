@@ -12,7 +12,7 @@ export const ActiveDeckProvider = ({ children }) => {
   const deckList = useDeckList();
 
   useEffect(() => {
-      fetchCards();
+    fetchCards();
   }, [deckId]);
 
   const fetchCards = async () => {
@@ -31,7 +31,7 @@ export const ActiveDeckProvider = ({ children }) => {
   };
 
   const value = {
-	  cardList,
+    cardList,
     deckId,
     actions: {
       selectDeckById,
