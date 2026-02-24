@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/Card";
 import { Creator } from "./Creator";
 import { useActiveDeck } from "../providers/ActiveDeckProvider";
 import { Practice } from "./Practice";
+import { Edit } from "./Edit";
 import { ModeMenu } from "./ModeMenu";
 export const Interface = ({ activeCard }) => {
   const activeDeck = useActiveDeck();
