@@ -6,6 +6,5 @@ export {
   useActiveDeck,
 } from "./providers/ActiveDeckProvider";
 export { DeckController } from "./views/DeckController";
-export { Creator } from "./Creator";
 
 export { useDeckMode } from "./hooks/useDeckMode";
