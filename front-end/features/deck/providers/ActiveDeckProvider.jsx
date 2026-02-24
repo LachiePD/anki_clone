@@ -2,7 +2,7 @@
 import { useContext, createContext, useState, useEffect } from "react";
 import { fetchByDeck, createNewCard } from "@/api/card.api.js";
 import { useDeckList } from "./DeckListContext.jsx";
-
+import { useDeckMode } from "../hooks/useDeckMode";
 const ActiveDeckContext = createContext();
 
 export const ActiveDeckProvider = ({ children }) => {
@@ -10,6 +10,7 @@ export const ActiveDeckProvider = ({ children }) => {
   const [cardList, setCardList] = useState([]);
   const [selectedCard, setSelectedCard] = useState(0);
   const deckList = useDeckList();
+  const deckMode = useDeckMode();
 
   useEffect(() => {
     fetchCards();
