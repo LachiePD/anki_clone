@@ -45,6 +45,7 @@ export const ActiveDeckProvider = ({ children }) => {
     actions: {
       selectDeckById,
       handleNewFlashcard,
+      drawNextCard,
     },
   };
 
