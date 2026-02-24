@@ -13,7 +13,7 @@ export const ActiveCardProvider = ({ children }) => {
     setContent({ front, back });
   };
   useEffect(() => {
-    activeDeck.fetchCard();
+    activeDeck.actions.fetchCard();
   }, []);
 
   const toggleRevealed = () => {
