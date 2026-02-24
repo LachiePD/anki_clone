@@ -1,5 +1,6 @@
 export { DeckListProvider, useDeckList } from "./providers/DeckListContext";
 
+export {Stage} from './Stage';
 export {
   ActiveDeckProvider,
   useActiveDeck,

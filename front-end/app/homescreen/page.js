@@ -1,6 +1,6 @@
 "use client";
-import { useActiveDeck, Creator, DeckController } from "@/features/deck/index.js";
-import Card from "@/components/ui/Card.jsx";
+import { useActiveDeck,  DeckController , Stage} from "@/features/deck/index.js";
+import {Card} from "@/components/ui/Card.jsx";
 import SideBar from "@/features/Sidebar.jsx";
 
 const page = () => {
@@ -16,7 +16,6 @@ const page = () => {
         <header className={"min-h-24"}>
           <h1 className={"text-3xl "}>my sticky brain :)</h1>
         </header>
-        <p>Enter a new deck</p>
         <Card className={"flex-row  items-end"}>
           {activeDeck.deckId ? (
             <DeckController key={activeDeck.deckId} />
@@ -24,6 +23,7 @@ const page = () => {
             <Creator />
           )}
         </Card>
+		<Stage/>
       </section>
     </main>
   );
