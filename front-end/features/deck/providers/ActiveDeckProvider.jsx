@@ -13,7 +13,11 @@ export const ActiveDeckProvider = ({ children }) => {
   const mode = useDeckMode();
 
   useEffect(() => {
-    fetchCards();
+    if (deckId) {
+      setCardList([]);
+      setCardIndex(0);
+      fetchCards();
+    }
   }, [deckId]);
 
   const fetchCards = async () => {
