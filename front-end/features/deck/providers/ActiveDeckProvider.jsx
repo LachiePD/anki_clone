@@ -8,7 +8,7 @@ const ActiveDeckContext = createContext();
 export const ActiveDeckProvider = ({ children }) => {
   const [deckId, setDeckId] = useState(null);
   const [cardList, setCardList] = useState([]);
-  const [selectedCard, setSelectedCard] = useState(0);
+  const [cardIndex, setCardIndex] = useState(0);
   const deckList = useDeckList();
   const mode = useDeckMode();
 
@@ -21,6 +21,7 @@ export const ActiveDeckProvider = ({ children }) => {
     setCardList(data.cards);
   };
 
+  //TODO this is wrong it feels like. This stream shouldnt try to populate itsself, should it?
   const selectDeckById = (id) => {
     const deck = deckList.actions.findById(id);
     setDeckId(deck.id);
@@ -31,6 +32,11 @@ export const ActiveDeckProvider = ({ children }) => {
     fetchCards();
   };
 
+  const drawNextCard = () => {
+    const card = cardList[cardIndex];
+    setCardIndex((prev) => prev + 1);
+    return card;
+  };
   const value = {
     mode,
     cardList,
