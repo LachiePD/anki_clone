@@ -13,9 +13,7 @@ export const DeckController = () => {
   const renderMode = () => {
     switch (mode.currentMode) {
       case "practicing":
-        return (
-          <Practice modeActions={mode.actions}  />
-        );
+        return <Practice modeActions={mode.actions} />;
 
       case "editing":
         return (
