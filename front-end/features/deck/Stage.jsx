@@ -4,9 +4,5 @@ import { useActiveDeck } from "./providers/ActiveDeckProvider";
 
 export const Stage = () => {
   const activeDeck = useActiveDeck();
-  return (
-    <Card>
-      <DeckController />
-    </Card>
-  );
+  return <Card>{activeDeck.deckId && <p>{activeDeck.deckId}</p>}</Card>;
 };
