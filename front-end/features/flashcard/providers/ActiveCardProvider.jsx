@@ -17,7 +17,7 @@ export const ActiveCardProvider = ({ children }) => {
   }, [activeDeck.cardList]);
 
   const handleNewCard = (card) => {
-    const { front, back } = activeDeck.actions.fetchCard();
+    const { front, back } = card;
     setContent({ front, back });
   };
 
