@@ -18,19 +18,14 @@ export const Creator = ({ createNewDeck }) => {
   return (
     <form className={"flex flex-col flex-1 "}>
       <textarea
-	  className={"  h-[30%] focus:outline-none focus:ring-0 resize-none"}
+        className={"  h-[30%] focus:outline-none focus:ring-0 resize-none"}
         onChange={handleChange}
         placeholder={"name of deck..."}
         value={deckName}
       />
-      <button
-        type={"submit"}
-        onClick={handleSubmit}
-        className={"button"}
-      >
+      <button type={"submit"} onClick={handleSubmit} className={"button"}>
         submit
       </button>
     </form>
   );
 };
-
