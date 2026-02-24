@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
 import { useState, useEffect } from "react";
 
 export const useDeckMode = () => {
-  const [current, setCurrent] = useState("inspecting");
+  const [currentMode, setCurrentMode] = useState("inspecting");
 
-  const startPractice = () => setCurrent("practicing");
-  const startEditing = () => setCurrent("editing");
-  const startInspecting = () => setCurrent("inspecting");
+  const startPractice = () => setCurrentMode("practicing");
+  const startEditing = () => setCurrentMode("editing");
+  const startInspecting = () => setCurrentMode("inspecting");
 
   return {
-    current,
+    currentMode,
     actions: {
       startPractice,
       startEditing,
