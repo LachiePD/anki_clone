@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import { useActiveDeck } from "@/features/deck/index.js";
 
@@ -11,7 +12,7 @@ export const useFlashcard = () => {
     setContent({ front, back });
   };
   useEffect(() => {
-    nextCard();
+    activeDeck.fetchCard;
   }, []);
 
   const toggleRevealed = () => {
