@@ -2,30 +2,14 @@ import { Card } from "@/components/ui/Card";
 import { Creator } from "./Creator";
 import { useActiveDeck } from "../providers/ActiveDeckProvider";
 import { Practice } from "./Practice";
+import { ModeMenu } from "./ModeMenu";
 export const Interface = ({ activeCard }) => {
   const activeDeck = useActiveDeck();
 
-  const modeMenu = () => {
-    return (
-      <>
-        <button onClick={activeDeck.mode.actions.startPractice}>
-          Go to practice
-        </button>
-
-        <button
-          className={"button"}
-          onClick={activeDeck.mode.actions.startEditing}
-        >
-          Edit
-        </button>
-      </>
-    );
-  };
   const decideOutput = () => {
-    console.log(activeDeck.mode.currentMode);
     switch (activeDeck.mode.currentMode) {
       case "inspecting":
-        return modeMenu();
+        return <ModeMenu />;
       case "practice":
         return <Practice />;
     }
