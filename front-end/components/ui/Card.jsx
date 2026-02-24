@@ -6,7 +6,7 @@ const styles = {
 	`,
 };
 
-const Card = ({ header, children, className }) => {
+export const Card = ({ header, children, className }) => {
   return (
     <div className={`${styles.card} ${className}`}>
       <h1 className={"text-2xl "}>{header}</h1>
@@ -15,4 +15,3 @@ const Card = ({ header, children, className }) => {
   );
 };
 
-export default Card;

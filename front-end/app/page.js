@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import {CreateUserForm } from "@/features/forms/index.js";
-import Card from "@/components/ui/Card.jsx";
+import {Card } from "@/components/index";
 
 const page = () => {
   const router = useRouter();
