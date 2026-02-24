@@ -5,7 +5,6 @@ import { Practice } from "./views/Practice";
 export const Stage = () => {
   const activeDeck = useActiveDeck();
 
-  console.log(activeDeck.mode.currentMode);
   const renderMode = () => {
     switch (activeDeck.mode.currentMode) {
       case "practicing":
