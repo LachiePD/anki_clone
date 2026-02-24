@@ -1,9 +1,7 @@
 import { Card } from "@/components/ui/Card";
-import { useActiveDeck } from "../providers/ActiveDeckProvider";
 import { Creator } from "./Creator";
-import { DeckController } from "../views/DeckController";
-
 import { useFlashcard } from "@/features/flashcard/index";
+import { useActiveDeck } from "../providers/ActiveDeckProvider";
 import { Practice } from "./Practice";
 export const Interface = () => {
   const activeDeck = useActiveDeck();
