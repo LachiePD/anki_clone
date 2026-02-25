@@ -17,11 +17,16 @@ export const useApi = () => {
   return {
     auth: {
       login: wrap(auth.login),
-      create: wrap(auth.createUser),
+      createUser: wrap(auth.createUser),
     },
-    cards: {
-      fetch: wrap(card.fetchByDeck),
-      create: wrap(card.createNewCard),
+    card: {
+      fetchByDeck: wrap(card.fetchByDeck),
+      createNewCard: wrap(card.createNewCard),
+    },
+    deck: {
+      submitNewDeck: wrap(deck.submiteNewDeck),
+      getAllDecks: wrap(deck.getAllDecks),
+      removeDeck: wrap(deck.removeDeck),
     },
   };
 };
