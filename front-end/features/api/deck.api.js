@@ -49,3 +49,4 @@ export const removeDeck = async (deckId) => {
 	}
 	return data;
 };
+export const deck {removeDeck, getDecks, submitNewDeck, }

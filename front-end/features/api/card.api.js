@@ -1,20 +1,14 @@
-import {MOCK_CARDS} from './mockData.js';
-
+import { MOCK_CARDS } from "./mockData.js";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export const fetchByDeck = async (id) => {
+  const response = await fetch(`${apiUrl}/fetchCardsForDeck?id=${id}`, {
+    method: "GET",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+  });
 
-  const response = await fetch(
-    `${apiUrl}/fetchCardsForDeck?id=${id}`,
-    {
-      method: "GET",
-      credentials: "include",
-      headers: { "Content-Type": "application/json" },
-    },
-  );
-
-	
   const data = await response.json();
   return data;
 };
@@ -36,3 +30,5 @@ export const createNewCard = async (deckId, card) => {
   }
   return data;
 };
+
+export const card = { createNewCard, fetchByDeck };

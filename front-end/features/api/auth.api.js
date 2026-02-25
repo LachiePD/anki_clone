@@ -13,6 +13,8 @@ export const attemptLogin = async (credentials) => {
   } catch (error) {
     console.log("api , attemptLogin error");
     console.log(error.message);
-	  return {message: error.message, status:0}
+    return { message: error.message, status: 0 };
   }
 };
+
+export const auth = { attemptLogin };
