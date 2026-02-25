@@ -1,10 +1,7 @@
 "use client";
 import { useState, createContext, useEffect, useContext } from "react";
-import {
-  getDecks,
-  submitNewDeck,
-  removeDeck as removeDeckApi,
-} from "@/api/deck/deck.api.js";
+
+import { useApi } from "@/features/api/index";
 
 const DeckListContext = createContext();
 
@@ -16,12 +13,12 @@ export const DeckListProvider = ({ children }) => {
   }, []);
 
   const createNewDeck = async (deckName) => {
-    const response = await submitNewDeck(deckName);
+    const response = await api.deck.createNewDeck(deckName);
     await fetchDecks();
   };
 
   const fetchDecks = async () => {
-    const data = await getDecks();
+    const data = await api.deck.getAllDecks();
     if (!data.response) {
       setDecks([]);
       return;
@@ -33,7 +30,7 @@ export const DeckListProvider = ({ children }) => {
     return foundDeck;
   };
   const removeDeck = async (deckId) => {
-    await removeDeckApi(deckId);
+    await api.deck.removeDeck(deckId);
     setDecks((prev) => {
       return prev.filter((deck) => deck.id !== deckId);
     });
