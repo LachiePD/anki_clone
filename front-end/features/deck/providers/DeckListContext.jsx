@@ -6,6 +6,7 @@ import { useApi } from "@/features/api/index";
 const DeckListContext = createContext();
 
 export const DeckListProvider = ({ children }) => {
+  const api = useApi();
   const [decks, setDecks] = useState([]);
 
   useEffect(() => {
