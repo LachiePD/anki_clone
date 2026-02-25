@@ -1,5 +1,5 @@
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-import {MOCK_DECKS} from '../mockData.js';
+import { MOCK_DECKS } from "../mockData.js";
 export const submitNewDeck = async (deckName) => {
   const response = await fetch(`${apiUrl}/createdeck`, {
     method: "POST",
@@ -35,18 +35,21 @@ export const getAllDecks = async () => {
 };
 
 export const removeDeck = async (deckId) => {
-  const result = await fetch(`${apiUrl}/removeDeck/${encodeURIComponent(deckId)}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
+  const result = await fetch(
+    `${apiUrl}/removeDeck/${encodeURIComponent(deckId)}`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
     },
-    credentials: "include",
-  });
-	const data = await result.json();
-	if(!result.ok){
-		console.log(data);
-		return {error: data.error}
-	}
-	return data;
+  );
+  const data = await result.json();
+  if (!result.ok) {
+    console.log(data);
+    return { error: data.error };
+  }
+  return data;
 };
-export const deck {removeDeck, getAllDecks, submitNewDeck, }
+export const deck = { removeDeck, getAllDecks, submitNewDeck };
