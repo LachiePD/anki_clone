@@ -15,7 +15,7 @@ export const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const result = await api.auth.attemptLogin({
+    const result = await api.auth.login({
       userName: formData.userName,
       password: formData.password,
     });
