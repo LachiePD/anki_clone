@@ -7,8 +7,11 @@ export const useApi = () => {
   const [response, setResponse] = useState(null);
 
   const createUser = async (credentials) => {
-    auth.createUser(credentials);
+    await auth.createUser(credentials);
   };
 
+  const attemptLogin = async (credentials) => {
+    await auth.attemptLogin(credentials);
+  };
   return { createUser };
 };
