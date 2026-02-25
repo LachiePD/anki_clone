@@ -1,11 +1,9 @@
-
-
-import { attemptLogin } from "@/api/auth/auth.js";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useApi } from "@/features/api/useApi";
 
 export const LoginForm = () => {
-
+  const api = useApi();
   const [formData, setFormData] = useState({ userName: "", password: "" });
   const router = useRouter();
 
@@ -16,7 +14,11 @@ export const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await attemptLogin({userName:formData.userName, password:formData.password});
+
+    const result = await api.attemptLogin({
+      userName: formData.userName,
+      password: formData.password,
+    });
 
     if (result.status !== 200) {
       throw new Error();
@@ -26,10 +28,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <form
-      className={" flex mx-auto gap-4 flex-col "}
-      onSubmit={handleSubmit}
-    >
+    <form className={" flex mx-auto gap-4 flex-col "} onSubmit={handleSubmit}>
       <label>Username: </label>
       <input
         name="userName"
