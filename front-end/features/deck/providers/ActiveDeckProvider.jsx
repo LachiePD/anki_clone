@@ -14,7 +14,6 @@ export const ActiveDeckProvider = ({ children }) => {
 
   useEffect(() => {
     if (!deckId) return;
-    //
     mode.actions.startInspecting();
     fetchCards();
   }, [deckId]);
