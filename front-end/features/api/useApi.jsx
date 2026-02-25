@@ -24,7 +24,8 @@ export const useApi = () => {
       createNewCard: wrap(card.createNewCard),
     },
     deck: {
-      submitNewDeck: wrap(deck.submiteNewDeck),
+      //TODO deck.submitNewDeck --> createNewDeck
+      createNewDeck: wrap(deck.submiteNewDeck),
       getAllDecks: wrap(deck.getAllDecks),
       removeDeck: wrap(deck.removeDeck),
     },
