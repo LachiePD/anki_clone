@@ -28,8 +28,8 @@ export const useApi = () => {
     },
     deck: {
       //TODO deck.submitNewDeck --> createNewDeck
-      createNewDeck: wrap(deck.submiteNewDeck),
-      getAllDecks: wrap(deck.getAllDecks),
+      createNewDeck: wrap(deck.submitNewDeck),
+      getAllDecks: wrap(deck.getDecks),
       removeDeck: wrap(deck.removeDeck),
     },
   };

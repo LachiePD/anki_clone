@@ -23,6 +23,7 @@ export const getDecks = async () => {
   });
 
   const data = await result.json();
+  return data;
 };
 export const removeDeck = async (deckId) => {
   const result = await fetch(
