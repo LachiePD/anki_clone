@@ -1,4 +1,5 @@
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
 export const submitNewDeck = async (deckName) => {
   const response = await fetch(`${apiUrl}/createdeck`, {
     method: "POST",
@@ -9,15 +10,10 @@ export const submitNewDeck = async (deckName) => {
     body: JSON.stringify({ deckName }),
   });
   const data = await response.json();
-  if (!response.ok) {
-    return {
-      error: data.error || "Something went wrong in submitNewDeck api call",
-    };
-  }
   return data;
 };
 
-export const getAllDecks = async () => {
+export const getDecks = async () => {
   const result = await fetch(`${apiUrl}/getAllDecks`, {
     method: "GET",
     credentials: "include",
@@ -27,12 +23,7 @@ export const getAllDecks = async () => {
   });
 
   const data = await result.json();
-  if (!result.ok) {
-    return { error: data.error || "Something went wrong in getDecks api call" };
-  }
-  return data;
 };
-
 export const removeDeck = async (deckId) => {
   const result = await fetch(
     `${apiUrl}/removeDeck/${encodeURIComponent(deckId)}`,
@@ -45,10 +36,6 @@ export const removeDeck = async (deckId) => {
     },
   );
   const data = await result.json();
-  if (!result.ok) {
-    console.log(data);
-    return { error: data.error };
-  }
   return data;
 };
-export const deck = { removeDeck, getAllDecks, submitNewDeck };
+export const deck = { removeDeck, getDecks, submitNewDeck };
