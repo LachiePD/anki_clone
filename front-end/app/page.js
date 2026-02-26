@@ -11,7 +11,6 @@ const page = () => {
     <div className={"  flex flex-col  h-full mx-auto  justify-center"}>
       <Card header={"Create User!"}>
         <CreateUserForm />
-        //TODO can use <Link /> or this
         <button className={"button"} onClick={() => router.push("/login")}>
           Login
         </button>

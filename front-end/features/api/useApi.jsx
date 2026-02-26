@@ -3,14 +3,14 @@ import { card } from "./card.api.js";
 import { deck } from "./deck.api.js";
 import { useAuth } from "@/features/auth/index";
 export const useApi = () => {
-  const auth = useAuth();
+  const authContext = useAuth();
   const wrap =
     (func) =>
     async (...args) => {
       const data = await func(...args);
       if (data.code === 401) {
         if (data.error === "TokenExpiredError") {
-          auth.actions.revokeAccess({ reason: "jwtExpired" });
+          authContext.actions.revokeAccess({ reason: "jwtExpired" });
           return;
         }
       }

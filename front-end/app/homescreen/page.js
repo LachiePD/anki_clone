@@ -7,6 +7,7 @@ import {
 } from "@/features/deck/index.js";
 import { Card } from "@/components/ui/Card.jsx";
 import SideBar from "@/features/Sidebar.jsx";
+import { useAuth } from "@/features/auth/index";
 
 const page = () => {
   return (
