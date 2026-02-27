@@ -1,6 +1,5 @@
 import { request } from "./request";
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 const login = (payload) =>
   request(`/login`, { method: "POST", body: JSON.stringify(payload) });
 
