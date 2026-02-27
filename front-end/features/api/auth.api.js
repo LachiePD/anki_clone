@@ -1,28 +1,10 @@
+import { request } from "./request";
+
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-export const login = async (credentials) => {
-  const response = await fetch(`${apiUrl}/login`, {
-    method: "POST",
-    credentials: "include",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(credentials),
-  });
-  const data = await response.json();
-  return { ...data, status: response.status };
-};
+const login = (payload) =>
+  request(`/login`, { method: "POST", body: JSON.stringify(payload) });
 
-export const createUser = async (credentials) => {
-  try {
-    const response = await fetch(`${apiUrl}/registerUser`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(credentials),
-    });
-
-    const data = await response.json();
-    return await { status: response.status, message: data.message };
-  } catch (err) {
-    console.error("Error in createUser:", err);
-  }
-};
+const createUser = (payload) =>
+  request("/registerUser", { method: "POST", body: JSON.stringify(payload) });
 
 export const auth = { login, createUser };
