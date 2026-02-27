@@ -20,7 +20,7 @@ export const DeckListProvider = ({ children }) => {
 
   const fetchDecks = async () => {
     const data = await api.deck.getAllDecks();
-    if (!data.response) {
+    if (!data) {
       setDecks([]);
       return;
     }

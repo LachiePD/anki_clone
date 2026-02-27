@@ -10,7 +10,6 @@ const errorMiddleware = (err, req, res, next) => {
   });
 
   if (err.name === "TokenExpiredError") {
-    console.log("HERE");
     res.status(401).json({ code: 401, error: err.name });
     return;
   }

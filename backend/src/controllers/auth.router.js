@@ -18,6 +18,7 @@ const authRouter = ({ authServices }) => {
       maxAge: 24 * 60 * 60 * 1000,
     });
 
+    console.log("LOGGED IN");
     return res.status(200).json({ message: "login successfull" });
   });
   return router;
