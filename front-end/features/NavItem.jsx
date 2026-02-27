@@ -1,7 +1,5 @@
 import { MeatballMenu } from "@/features/meatball/index.js";
 
-
-
 const NavItem = ({ deck, handleDelete, deckSelectionEvent }) => {
   return (
     <div

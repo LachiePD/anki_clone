@@ -9,7 +9,8 @@ const SideBar = () => {
     return deckList.decks.map((deck) => (
       <li key={deck.id}>
         <NavItem
-          deckSelectionEvent={()=>activeDeck.actions.selectDeckById(deck.id)}
+          //TODO these context methods shouldnt be injected
+          deckSelectionEvent={() => activeDeck.actions.selectDeckById(deck.id)}
           handleDelete={deckList.actions.removeDeck}
           deck={deck}
         />
