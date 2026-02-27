@@ -29,8 +29,7 @@ export const ActiveDeckProvider = ({ children }) => {
     setDeckId(deck.id);
   };
 
-  const handleNewFlashcard = async (card) => {
-    await api.card.createNewCard(deckId, card);
+  const refresh = () => {
     fetchCards();
   };
 
@@ -64,8 +63,8 @@ export const ActiveDeckProvider = ({ children }) => {
     deckId,
     actions: {
       selectDeckById,
-      handleNewFlashcard,
       drawNextCard,
+      refresh,
       fetchCard,
     },
   };

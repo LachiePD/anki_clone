@@ -3,8 +3,9 @@
 
 
 TODO:
-
-have <Deck/> show properly in the <Stage/>
+homescreen doesnt show anything in stage when theres no deck selected.
+theres no way to go back after clicking practice on deck.
+when theres a refresh the user is sent back to login. This is fixed by checking the jwt with the backend to stop the AUthContext useEffect() from taking over.
 have the interface and <Deck/> working in sync.
 Add functionality to edit a card in a deck.
 Fix the practice card look , currently looks very poor.
@@ -23,6 +24,7 @@ Fix the practice card look , currently looks very poor.
 DONE.
 ✓Made activeDeck a context
 
+have <Deck/> show properly in the <Stage/>✓
 
 
 

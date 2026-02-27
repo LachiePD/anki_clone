@@ -15,6 +15,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (!access.isAllowed && !publicRoutes.includes(pathname)) {
+      console.log(access.isAllowed);
       router.push("/login");
     }
   }, [access.isAllowed, pathname]);

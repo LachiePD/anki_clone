@@ -8,12 +8,12 @@ export const useApi = () => {
     (func) =>
     async (...args) => {
       const data = await func(...args);
-      console.log(data.status);
       if (data.status !== 200) {
         if (data.error === "TokenExpiredError") {
           authContext.actions.revokeAccess({ reason: "jwtExpired" });
           return;
         }
+        console.log("ERROR SON, useApi");
         return;
       }
       return data;
@@ -26,7 +26,7 @@ export const useApi = () => {
     },
     card: {
       fetchByDeck: wrap(card.fetchByDeck),
-      createNewCard: wrap(card.createNewCard),
+      newCard: wrap(card.newCard),
     },
     deck: {
       //TODO deck.submitNewDeck --> createNewDeck
