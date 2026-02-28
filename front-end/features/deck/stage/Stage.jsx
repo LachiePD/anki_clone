@@ -3,7 +3,7 @@ import { useActiveDeck } from "../providers/ActiveDeckProvider";
 import { Inspect } from "./views/Inspect";
 import { Practice } from "./views/Practice";
 import { Edit } from "./views/Edit";
-
+import { Finished } from "./views/Finished";
 export const Stage = ({ activeCard }) => {
   const activeDeck = useActiveDeck();
 
@@ -17,6 +17,8 @@ export const Stage = ({ activeCard }) => {
 
       case "inspecting":
         return <Inspect />;
+      case "finished":
+        return <Finished />;
     }
   };
   return <div>{renderMode()}</div>;

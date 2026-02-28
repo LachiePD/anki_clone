@@ -6,6 +6,7 @@ import { useActiveDeck } from "../providers/ActiveDeckProvider";
 import { Practice } from "./Practice";
 import { Edit } from "./Edit";
 import { ModeMenu } from "./ModeMenu";
+import { Finished } from "./Finished";
 export const Interface = () => {
   const activeDeck = useActiveDeck();
 
@@ -18,7 +19,7 @@ export const Interface = () => {
       case "editing":
         return <Edit />;
       case "finished":
-        return <p> finished</p>;
+        return <Finished />;
     }
   };
 
