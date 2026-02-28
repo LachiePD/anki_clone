@@ -17,6 +17,8 @@ export const Interface = () => {
         return <Practice />;
       case "editing":
         return <Edit />;
+      case "finished":
+        return <p> finished</p>;
     }
   };
 

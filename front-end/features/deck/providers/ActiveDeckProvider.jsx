@@ -34,18 +34,16 @@ export const ActiveDeckProvider = ({ children }) => {
   };
 
   const drawNextCard = () => {
-    if (isFinished()) {
-      return null;
-    } else {
-      const newIndex = cardIndex + 1;
-      setCardIndex(newIndex);
-      return cardList[newIndex];
-    }
+    const newIndex = cardIndex + 1;
+    if (isFinished(newIndex)) return null;
+    setCardIndex(newIndex);
+    return cardList[newIndex];
   };
 
-  const isFinished = () => {
-    if (cardIndex + 1 >= cardList.length) {
+  const isFinished = (givenIndex) => {
+    if (givenIndex + 1 >= cardList.length) {
       mode.actions.setFinished();
+      setCardIndex(0);
       return true;
     } else {
       return false;
