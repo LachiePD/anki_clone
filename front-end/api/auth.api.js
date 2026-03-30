@@ -6,4 +6,8 @@ const login = (payload) =>
 const createUser = (payload) =>
   request("/registerUser", { method: "POST", body: JSON.stringify(payload) });
 
+const verify = (payload) => {
+  request("/verify", { method: "GET" });
+};
+
 export const auth = { login, createUser };

@@ -1,5 +1,5 @@
 import express from "express";
-
+import { authMiddleware } from "../middleware/auth.middleware.js";
 const authRouter = ({ authServices }) => {
   const router = express.Router();
 
@@ -20,6 +20,9 @@ const authRouter = ({ authServices }) => {
 
     console.log("LOGGED IN");
     return res.status(200).json({ message: "login successfull" });
+  });
+  router.get("/verify", authMiddleware, async (req, res) => {
+    res.status(200).json({ message: "cookie verified" });
   });
   return router;
 };

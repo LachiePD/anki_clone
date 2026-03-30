@@ -2,15 +2,11 @@ import { card, auth, deck } from "@/api/index.mjs";
 import { useAuth } from "./AuthProvider.jsx";
 export const useApi = () => {
   const authContext = useAuth();
-  const wrap =
+  const errorHandler =
     (func) =>
     async (...args) => {
       const data = await func(...args);
       if (data.status !== 200) {
-        if (data.error === "TokenExpiredError") {
-          authContext.actions.revokeAccess({ reason: "jwtExpired" });
-          return;
-        }
         console.log("ERROR SON, useApi");
         return;
       }
@@ -19,17 +15,18 @@ export const useApi = () => {
 
   return {
     auth: {
-      login: wrap(auth.login),
-      createUser: wrap(auth.createUser),
+      login: errorHandler(auth.login),
+      createUser: errorHandler(auth.createUser),
+      verify: errorHandler(auth.verify),
     },
     card: {
-      fetchByDeck: wrap(card.fetchByDeck),
-      newCard: wrap(card.newCard),
+      fetchByDeck: errorHandler(card.fetchByDeck),
+      newCard: errorHandler(card.newCard),
     },
     deck: {
-      createDeck: wrap(deck.createDeck),
-      getAllDecks: wrap(deck.getDecks),
-      removeDeck: wrap(deck.removeDeck),
+      createDeck: errorHandler(deck.createDeck),
+      getAllDecks: errorHandler(deck.getDecks),
+      removeDeck: errorHandler(deck.removeDeck),
     },
   };
 };

@@ -4,5 +4,5 @@ export const Edit = () => {
   const activeDeck = useActiveDeck();
   const deckLength = activeDeck.cardList.length;
 
-  return <>{deckLength}</>;
+  return <>Number of cards: {deckLength}</>;
 };

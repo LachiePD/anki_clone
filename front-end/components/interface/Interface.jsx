@@ -1,33 +1,24 @@
 "use client";
 import { useEffect } from "react";
 import { Card } from "@/components/ui/Card";
-import { Creator } from "./Creator";
+import { Creator, Practice, Edit, Default, Finished } from "./views/index.mjs";
 import { useActiveDeck } from "@/providers/index.mjs";
-import { Practice } from "./Practice";
-import { Edit } from "./Edit";
-import { ModeMenu } from "./ModeMenu";
-import { Finished } from "./Finished";
 export const Interface = () => {
-  const activeDeck = useActiveDeck();
+  const { mode, deckId } = useActiveDeck();
 
-  const decideOutput = () => {
-    switch (activeDeck.mode.currentMode) {
-      case "inspecting":
-        return <ModeMenu />;
-      case "practicing":
-        return <Practice />;
-      case "editing":
-        return <Edit />;
-      case "finished":
-        return <Finished />;
-    }
+  console.log(mode);
+  const chooseMode = {
+    practicing: <Practice />,
+    editing: <Edit />,
+    finished: <Finished />,
+    inspecting: <Default />,
   };
 
   return (
     <Card className={"flex-row  items-end"}>
-      {!activeDeck.deckId && <Creator />}
+      {!deckId && <Creator />}
 
-      {activeDeck.deckId && decideOutput()}
+      {deckId && chooseMode[mode.currentMode]}
     </Card>
   );
 };

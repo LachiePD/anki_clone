@@ -3,7 +3,6 @@ import { useRouter } from "next/navigation";
 import { useApi, useAuth } from "@/providers/index.mjs";
 
 export const LoginForm = () => {
-  const authContext = useAuth();
   const api = useApi();
   const [formData, setFormData] = useState({ userName: "", password: "" });
   const router = useRouter();
@@ -21,7 +20,7 @@ export const LoginForm = () => {
       password: formData.password,
     });
 
-    authContext.actions.login();
+    api.auth.login;
     router.push("/homescreen");
   };
 

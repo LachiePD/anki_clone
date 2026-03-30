@@ -25,7 +25,7 @@ export const Creator = ({ createNewDeck }) => {
         value={deckName}
       />
       <button type={"submit"} onClick={handleSubmit} className={"button"}>
-        submit
+        Create Deck!
       </button>
     </form>
   );

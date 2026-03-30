@@ -19,7 +19,7 @@ export const Sidebar = () => {
   };
   return (
     <nav className={" bg-secondary p-4 min-w-76"}>
-      <Subheader>Library</Subheader>
+      <Subheader>Deck List</Subheader>
       <ul>{renderDecks()}</ul>
     </nav>
   );

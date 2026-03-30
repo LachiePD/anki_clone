@@ -1,6 +1,6 @@
 import { useActiveDeck } from "@/providers/index.mjs";
 
-export const ModeMenu = () => {
+export const Default = () => {
   const activeDeck = useActiveDeck();
   return (
     <>

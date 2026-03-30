@@ -1,1 +1,5 @@
 fix dependencies in the Stage and Views, currently, the Views depend on activeDeck() , as well as Stage doing this. THe views should depend on the Stage, and stage depend on the activeDeck(), not both
+
+
+
+providers and hooks are currently in same files a lot of the time, not sure this is correct, look into it . E.g. ActiveDeckProvider exposes both useActiveDeck() and ActiveDeckProvider

@@ -4,6 +4,7 @@ const deckRouter = ({ deckServices, authMiddleware }) => {
   const router = express.Router();
 
   router.post("/createDeck", authMiddleware, async (req, res) => {
+    console.log(req.body.userId);
     const userId = req.userId;
     const deckName = req.body.deckName;
 
@@ -26,7 +27,7 @@ const deckRouter = ({ deckServices, authMiddleware }) => {
   });
 
   router.delete("/removeDeck/:deckId", authMiddleware, async (req, res) => {
-    const {deckId} = req.params;
+    const { deckId } = req.params;
     const userId = req.userId;
     const response = await deckServices.removeDeck({ deckId, userId });
 

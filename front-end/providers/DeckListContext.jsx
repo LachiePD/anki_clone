@@ -13,9 +13,9 @@ export const DeckListProvider = ({ children }) => {
     fetchDecks();
   }, []);
 
-  const createDeck = async (deckName) => {
-    const response = await api.deck.createDeck(deckName);
-    await fetchDecks();
+  const createDeck = (deckName) => {
+    const response = api.deck.createDeck(deckName);
+    fetchDecks();
   };
 
   const fetchDecks = async () => {

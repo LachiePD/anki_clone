@@ -28,8 +28,8 @@ export const ActiveDeckProvider = ({ children }) => {
     setDeckId(deck.id);
   };
 
-  const refresh = () => {
-    fetchCards();
+  const refresh = async () => {
+    await fetchCards();
   };
 
   const drawNextCard = () => {
