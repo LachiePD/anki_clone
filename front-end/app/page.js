@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { CreateUserForm } from "@/features/forms/index.js";
+import { CreateUserForm } from "@/components/index.mjs";
 import { Card } from "@/components/index";
 
 const page = () => {

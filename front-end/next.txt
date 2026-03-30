@@ -1,0 +1,1 @@
+fix dependencies in the Stage and Views, currently, the Views depend on activeDeck() , as well as Stage doing this. THe views should depend on the Stage, and stage depend on the activeDeck(), not both

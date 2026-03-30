@@ -1,5 +1,5 @@
 import "./globals.css";
-import { AuthProvider } from "@/features/auth/index";
+import { AuthProvider } from "@/providers/index.mjs";
 
 export default function RootLayout({ children }) {
   return (

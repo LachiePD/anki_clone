@@ -1,12 +1,3 @@
-const Subheader = ({children}) =>{
-
-
-	return (
-		<div className={'subheader'}>
-		{children}
-		</div>
-	);
-}
-
-
-export default Subheader;
+export const Subheader = ({ children }) => {
+  return <div className={"subheader"}>{children}</div>;
+};
