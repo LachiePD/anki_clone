@@ -66,6 +66,7 @@ export const ActiveDeckProvider = ({ children }) => {
       drawNextCard,
       refresh,
       fetchCard,
+      setDeckId,
     },
   };
 
