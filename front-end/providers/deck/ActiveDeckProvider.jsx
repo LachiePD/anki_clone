@@ -23,11 +23,6 @@ export const ActiveDeckProvider = ({ children }) => {
     setCardList(data.cards);
   };
 
-  const selectDeckById = (id) => {
-    const deck = deckList.actions.findById(id);
-    setDeckId(deck.id);
-  };
-
   const refresh = async () => {
     await fetchCards();
   };
@@ -68,7 +63,6 @@ export const ActiveDeckProvider = ({ children }) => {
     actions: {
       setDeckMode,
       getMode,
-      selectDeckById,
       drawNextCard,
       refresh,
       fetchCard,
