@@ -9,12 +9,12 @@ export const ActiveDeckProvider = ({ children }) => {
   const [cardList, setCardList] = useState([]);
   const [cardIndex, setCardIndex] = useState(0);
   const deckList = useDeckList();
-  const mode = useDeckMode();
+  const { currentMode, setMode } = useDeckMode();
   const api = useApi();
 
   useEffect(() => {
     if (!deckId) return;
-    mode.actions.startInspecting();
+    setMode.inspect();
     fetchCards();
   }, [deckId]);
 
@@ -36,7 +36,7 @@ export const ActiveDeckProvider = ({ children }) => {
 
   const isFinished = (givenIndex) => {
     if (givenIndex + 1 >= cardList.length) {
-      mode.actions.setFinished();
+      setMode.finished();
       setCardIndex(0);
       return true;
     } else {
@@ -45,12 +45,12 @@ export const ActiveDeckProvider = ({ children }) => {
   };
 
   const setDeckMode = {
-    practice: mode.actions.startPracticing,
-    edit: mode.actions.startEditing,
-    inspecting: mode.actions.startInspecting,
-    finished: mode.actions.setFinished,
+    practice: setMode.practice,
+    edit: setMode.edit,
+    inspecting: setMode.inspect,
+    finished: setMode.finished,
   };
-  const getMode = () => mode.currentMode;
+  const getMode = () => currentMode;
   const fetchCard = () => {
     if (cardList.length === 0) {
       return;
