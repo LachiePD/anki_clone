@@ -5,7 +5,7 @@ import { useDeckState } from "./useDeckState.jsx";
 const ActiveDeckContext = createContext();
 
 export const ActiveDeckProvider = ({ children }) => {
-  const deckList = useDeckList();
+  const deckList = useDeckList(); //strange coupling
   const deck = useDeckState();
   const api = useApi();
 
@@ -14,7 +14,7 @@ export const ActiveDeckProvider = ({ children }) => {
     deck.setMode.inspect();
     fetchCards();
   }, [deck.id]);
-
+  //maybe check if this is necessary, may be stored in the sidebar anyway
   const fetchCards = async () => {
     const data = await api.card.fetchByDeck(deck.id);
     deck.setCardList(data.cards);

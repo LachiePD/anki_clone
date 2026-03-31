@@ -1,14 +1,8 @@
-import {
-  DeckListProvider,
-  ActiveDeckProvider,
-  ActiveCardProvider,
-} from "@/providers/index.mjs";
+import { DeckListProvider, ActiveDeckProvider } from "@/providers/index.mjs";
 const HomescreenLayout = ({ children }) => {
   return (
     <DeckListProvider>
-      <ActiveDeckProvider>
-        <ActiveCardProvider>{children}</ActiveCardProvider>
-      </ActiveDeckProvider>
+      <ActiveDeckProvider>{children}</ActiveDeckProvider>
     </DeckListProvider>
   );
 };

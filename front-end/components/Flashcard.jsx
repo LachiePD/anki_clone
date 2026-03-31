@@ -1,7 +1,8 @@
-import { useActiveCard } from "@/providers/index.mjs";
+import { useActiveDeck } from "@/providers/index.mjs";
 
 export const Flashcard = () => {
-  const card = useActiveCard();
+  const { getCard } = useActiveDeck();
+  const card = getCard();
   const renderRevealed = () => {
     return (
       <>

@@ -5,12 +5,12 @@ import { Edit } from "./views/Edit";
 import { Finished } from "./views/Finished";
 import { Default } from "./views/Default";
 export const Stage = () => {
-  const { actions } = useActiveDeck();
+  const { deckMode } = useActiveDeck();
   const MODES = {
     practicing: <Practice />,
     editing: <Edit />,
     inspecting: <Inspect />,
     finished: <Finished />,
   };
-  return <div>{MODES[actions.getMode] || <Default />}</div>;
+  return <div>{MODES[deckMode] || <Default />}</div>;
 };

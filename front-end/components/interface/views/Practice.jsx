@@ -1,17 +1,20 @@
-import { useActiveCard } from "@/providers/index.mjs";
+import { useActiveDeck } from "@/providers/index.mjs";
 export const Practice = () => {
-  const activeCard = useActiveCard();
+  const { getCard, deck } = useActiveDeck();
+  const { drawNextCard } = deck;
 
-  if (activeCard.isRevealed) {
+  const [revealed, setRevealed] = useState(false);
+  const toggleRevealed = () => setRevealed(!revealed);
+  const card = getCard();
+
+  if (revealed) {
     return (
       <>
-        <button onClick={activeCard.toggleRevealed}>Try Again</button>
-        <button onClick={activeCard.nextCard}> Correct! </button>
+        <button onClick={toggleRevealed}>Try Again</button>
+        <button onClick={drawNextCard}> Correct! </button>
       </>
     );
-  }
-
-  if (!activeCard.isRevealed) {
-    return <button onClick={activeCard.toggleRevealed}> Show Answer!</button>;
+  } else if (!isRevealed) {
+    return <button onClick={toggleRevealed}> Show Answer!</button>;
   }
 };

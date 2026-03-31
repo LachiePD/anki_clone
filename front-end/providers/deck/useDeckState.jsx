@@ -52,5 +52,6 @@ export const useDeckState = () => {
     setCardList,
     setMode,
     getCard,
+    drawNextCard, //this should probably be owned by the context
   };
 };
