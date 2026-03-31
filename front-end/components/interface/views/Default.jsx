@@ -1,17 +1,12 @@
 import { useActiveDeck } from "@/providers/index.mjs";
 
 export const Default = () => {
-  const activeDeck = useActiveDeck();
+  const { actions } = useActiveDeck();
   return (
     <>
-      <button onClick={activeDeck.mode.actions.startPractice}>
-        Go to practice
-      </button>
+      <button onClick={actions.startPractice}>Go to practice</button>
 
-      <button
-        className={"button"}
-        onClick={activeDeck.mode.actions.startEditing}
-      >
+      <button className={"button"} onClick={actions.startEditing}>
         Edit
       </button>
     </>

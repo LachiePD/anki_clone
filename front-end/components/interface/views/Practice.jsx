@@ -1,7 +1,6 @@
-import { useActiveCard, useActiveDeck } from "@/providers/index.mjs";
+import { useActiveCard } from "@/providers/index.mjs";
 export const Practice = () => {
   const activeCard = useActiveCard();
-  const activeDeck = useActiveDeck();
 
   if (activeCard.isRevealed) {
     return (

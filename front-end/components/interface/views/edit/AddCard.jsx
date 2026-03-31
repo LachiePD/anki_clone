@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useActiveDeck, useApi } from "@/providers/index.mjs";
-
+//TODO, should this just be a form?
 export const AddCard = ({ toggleAddingCard }) => {
   const [content, setContent] = useState({ front: "", back: "" });
-  const activeDeck = useActiveDeck();
+  const { actions, deckId } = useActiveDeck();
   const api = useApi();
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -12,8 +12,8 @@ export const AddCard = ({ toggleAddingCard }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    api.card.newCard({ card: content, deckId: activeDeck.deckId });
-    activeDeck.actions.refresh();
+    api.card.newCard({ card: content, deckId });
+    actions.refresh(); //TODO, this method should say its refreshing the deck
     toggleAddingCard();
   };
   return (

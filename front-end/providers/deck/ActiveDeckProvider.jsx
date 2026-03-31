@@ -48,6 +48,14 @@ export const ActiveDeckProvider = ({ children }) => {
       return false;
     }
   };
+
+  const setDeckMode = {
+    practicing: mode.actions.startPracticing,
+    editing: mode.actions.startEditing,
+    inspecting: mode.actions.startInspecting,
+    finished: mode.actions.setFinished,
+  };
+  const getMode = () => mode.currentMode;
   const fetchCard = () => {
     if (cardList.length === 0) {
       return;
@@ -55,10 +63,11 @@ export const ActiveDeckProvider = ({ children }) => {
     return cardList[cardIndex];
   };
   const value = {
-    mode,
     cardList,
     deckId,
     actions: {
+      setDeckMode,
+      getMode,
       selectDeckById,
       drawNextCard,
       refresh,

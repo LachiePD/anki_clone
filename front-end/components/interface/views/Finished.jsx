@@ -1,9 +1,6 @@
 import { useActiveDeck } from "@/providers/index.mjs";
 export const Finished = () => {
-  const activeDeck = useActiveDeck();
+  const { actions } = useActiveDeck();
 
-  console.log(activeDeck.mode.currentMode);
-  return (
-    <button onClick={activeDeck.mode.actions.startInspecting}>Go Back</button>
-  );
+  return <button onClick={actions.setDeckMode.inspecting}>Go Back</button>;
 };
