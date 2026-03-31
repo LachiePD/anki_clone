@@ -4,13 +4,13 @@ import { useDeckList, useActiveDeck } from "@/providers/index.mjs";
 
 export const Sidebar = () => {
   const deckList = useDeckList();
-  const activeDeck = useActiveDeck();
+  const { actions } = useActiveDeck();
+
   const renderDecks = () => {
     return deckList.decks.map((deck) => (
       <li key={deck.id}>
         <NavItem
-          //TODO these context methods shouldnt be injected
-          deckSelectionEvent={() => activeDeck.actions.selectDeckById(deck.id)}
+          deckSelectionEvent={() => actions.setDeckId(deck.id)}
           handleDelete={deckList.actions.removeDeck}
           deck={deck}
         />
