@@ -45,8 +45,8 @@ export const ActiveDeckProvider = ({ children }) => {
   };
 
   const setDeckMode = {
-    practicing: mode.actions.startPracticing,
-    editing: mode.actions.startEditing,
+    practice: mode.actions.startPracticing,
+    edit: mode.actions.startEditing,
     inspecting: mode.actions.startInspecting,
     finished: mode.actions.setFinished,
   };
@@ -60,8 +60,8 @@ export const ActiveDeckProvider = ({ children }) => {
   const value = {
     cardList,
     deckId,
+    setDeckMode,
     actions: {
-      setDeckMode,
       getMode,
       drawNextCard,
       refresh,
