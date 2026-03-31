@@ -1,3 +1,4 @@
+import { useState } from "react";
 export const useDeckState = () => {
   const [deck, setDeck] = useState({
     id: null,
@@ -21,5 +22,13 @@ export const useDeckState = () => {
     finished: () => setDeck({ ...deck, mode: "finished" }),
   };
 
-  return { getId, getCardList, getIndex, setIndex, getMode, setMode };
+  return {
+    getId,
+    getCardList,
+    setCardList,
+    getIndex,
+    setIndex,
+    getMode,
+    setMode,
+  };
 };

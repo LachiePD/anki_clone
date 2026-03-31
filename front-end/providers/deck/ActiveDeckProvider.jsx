@@ -1,5 +1,5 @@
 "use client";
-import { useContext, createContext, useState, useEffect } from "react";
+import { useContext, createContext, useEffect } from "react";
 import { useDeckList, useApi } from "@/providers/index.mjs";
 import { useDeckState } from "./useDeckState.jsx";
 const ActiveDeckContext = createContext();
@@ -18,29 +18,38 @@ export const ActiveDeckProvider = ({ children }) => {
 
   const fetchCards = async () => {
     const data = await api.card.fetchByDeck(deck.getId);
-    deck.setDeckList(data.cards);
+    deck.setCardList(data.cards);
   };
 
   const refresh = async () => {
     await fetchCards();
   };
 
-  const fetchCard = () => {
-    if (deck.cardList.length === 0) {
-      return;
-    }
-    return deck.cardList[deck.index];
+  const getDeckLength = () => deck.getCardList.length;
+
+  const getCard = () => {
+    const index = deck.getIndex();
+    const cardList = deck.getCardList();
+    return cardList[index];
   };
 
-  //TODO , this is managing returning a card? shouldnt do that I dont think
+  const incrementCardList = () => {
+    const newIndex = 1 + deck.getIndex();
+    deck.setIndex(newIndex);
+  };
+
+  //TODO , this is managing returning a card? shouldnt do that I dont think, maybe better off having activeCard context...
+  //note, i think a bug will appear here, the index wont be updated when isFinished runs
   const drawNextCard = () => {
-    const newIndex = deck.index + 1;
-    if (isFinished(newIndex)) return null;
-    return deck.cardList[newIndex];
+    incrementCardList();
+    if (isFinished()) return null;
+    return getCard();
   };
 
-  const isFinished = (givenIndex) => {
-    if (givenIndex + 1 >= deck.cardList.length) {
+  const isFinished = () => {
+    const index = deck.getIndex();
+    const deckLength = getDeckLength();
+    if (index >= deckLength) {
       deck.setMode.finished();
       deck.setIndex(0);
       return true;
@@ -52,10 +61,8 @@ export const ActiveDeckProvider = ({ children }) => {
   const value = {
     deck,
     actions: {
-      getMode,
       drawNextCard,
       refresh,
-      fetchCard,
     },
   };
 
