@@ -9,7 +9,7 @@ export const Stage = () => {
   const MODES = {
     practicing: <Practice />,
     editing: <Edit />,
-    inspecting: <Inspect activeDeck={activeDeck} />,
+    inspecting: <Inspect />,
     finished: <Finished />,
   };
   return <div>{MODES[activeDeck.mode.currentMode] || <Default />}</div>;
