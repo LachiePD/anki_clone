@@ -9,4 +9,3 @@ export {
   useActiveDeck,
   ActiveDeckProvider,
 } from "./deck/ActiveDeckProvider.jsx";
-export { useDeckMode } from "./deck/useDeckMode.jsx";
