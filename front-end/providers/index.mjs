@@ -5,7 +5,4 @@ export {
   useActiveCard,
   ActiveCardProvider,
 } from "./card/ActiveCardProvider.jsx";
-export {
-  useActiveDeck,
-  ActiveDeckProvider,
-} from "./deck/ActiveDeckProvider.jsx";
+export { useActiveDeck, ActiveDeckProvider } from "./ActiveDeckProvider.jsx";
