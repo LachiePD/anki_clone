@@ -27,7 +27,7 @@ export const useDeckState = () => {
     const newIndex = 1 + deck.index;
     updateDeck({ index: newIndex });
   };
-  const isFinished = () => deck.index >= deck.length;
+  const isFinished = () => deck.index >= deckLength;
 
   const finishDeck = () => {
     updateDeck({ mode: "finished", index: 0 });
@@ -38,5 +38,7 @@ export const useDeckState = () => {
     updateDeck,
     deckLength,
     increment,
+    isFinished,
+    finishDeck,
   };
 };
