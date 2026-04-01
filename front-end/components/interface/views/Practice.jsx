@@ -1,21 +1,19 @@
 import { useState } from "react";
 import { useActiveDeck } from "@/providers/index.mjs";
 export const Practice = () => {
-  const { deck } = useActiveDeck();
-  const { drawNextCard } = deck;
+  const { deck, card } = useActiveDeck();
 
-  const [revealed, setRevealed] = useState(false);
   const toggleRevealed = () => setRevealed(!revealed);
   const card = deck.getCard();
 
-  if (revealed) {
+  if (card.revealed) {
     return (
       <>
-        <button onClick={toggleRevealed}>Try Again</button>
-        <button onClick={drawNextCard}> Correct! </button>
+        <button onClick={card.toggleRevealed}>Try Again</button>
+        <button onClick={deck.drawNextCard}> Correct! </button>
       </>
     );
-  } else if (!revealed) {
-    return <button onClick={toggleRevealed}> Show Answer!</button>;
+  } else if (!card.revealed) {
+    return <button onClick={card.toggleRevealed}> Show Answer!</button>;
   }
 };
