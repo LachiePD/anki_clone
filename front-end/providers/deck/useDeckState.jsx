@@ -2,6 +2,7 @@ import { useState } from "react";
 export const useDeckState = () => {
   const [deck, setDeck] = useState({
     id: null,
+    name: "",
     cardList: [],
     index: 0,
     mode: "default",
