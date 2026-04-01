@@ -6,13 +6,12 @@ import { useCard } from "./useCard.jsx";
 const ActiveDeckContext = createContext();
 
 export const ActiveDeckProvider = ({ children }) => {
-  const deck = useDeckState();
+  const { deck, updateDeck, deckLength, increment } = useDeckState();
   const card = useCard();
   const api = useApi();
 
   useEffect(() => {
     if (!deck.id) return;
-    deck.setMode.inspect();
     fetchCards();
     if (deckLength !== 0) {
       updateCard();
@@ -26,7 +25,7 @@ export const ActiveDeckProvider = ({ children }) => {
   //maybe check if this is necessary, may be stored in the sidebar anyway
   const fetchCards = async () => {
     const data = await api.card.fetchByDeck(deck.id);
-    deck.setCardList(data.cards);
+    updateDeck({ cardList: data.cards });
   };
 
   const refresh = async () => {
@@ -44,6 +43,7 @@ export const ActiveDeckProvider = ({ children }) => {
 
   const value = {
     deck,
+    updateDeck,
     refresh,
     card,
   };
