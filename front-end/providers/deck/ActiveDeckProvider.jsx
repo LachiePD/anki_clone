@@ -6,8 +6,9 @@ import { useCard } from "./useCard.jsx";
 const ActiveDeckContext = createContext();
 
 export const ActiveDeckProvider = ({ children }) => {
-  const { deck, updateDeck, deckLength, increment } = useDeckState();
-  const card = useCard();
+  const { deck, updateDeck, deckLength, increment, isFinished, finishDeck } =
+    useDeckState(); //this is too much. spread the deckState where its exported, rename the module to deck= useDeckState();
+  const { card, toggleRevealed, setNewCard } = useCard();
   const api = useApi();
 
   useEffect(() => {
