@@ -25,16 +25,8 @@ export const useDeckState = () => {
     const newIndex = 1 + deck.index;
     updateDeck({ index: newIndex });
   };
+  const isFinished = () => deck.index >= deck.length;
 
-  const isFinished = () => {
-    const index = deck.index;
-    if (index >= length) {
-      setMode.finished();
-      setIndex(0);
-      return true;
-    } else {
-      return false;
-    }
   };
 
   return {
