@@ -1,8 +1,5 @@
-import { Flashcard } from "@/components/index.mjs";
+import { useActiveDeck } from "@/providers/index.mjs";
 export const Practice = () => {
-  return (
-    <>
-      <Flashcard />
-    </>
-  );
+  const { card } = useActiveDeck();
+  return <>'practice'</>;
 };
