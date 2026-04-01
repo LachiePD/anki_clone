@@ -1,5 +1,4 @@
 "use client";
-import { useEffect } from "react";
 import { Card } from "@/components/ui/Card";
 import { Creator, Practice, Edit, Default, Finished } from "./views/index.mjs";
 import { useActiveDeck } from "@/providers/index.mjs";
