@@ -1,12 +1,11 @@
 "use client";
 import { useContext, createContext, useEffect } from "react";
-import { useDeckList, useApi } from "@/providers/index.mjs";
+import { useApi } from "@/providers/index.mjs";
 import { useDeckState } from "./useDeckState.jsx";
 import { useCard } from "./useCard.jsx";
 const ActiveDeckContext = createContext();
 
 export const ActiveDeckProvider = ({ children }) => {
-  const deckList = useDeckList(); //strange coupling
   const deck = useDeckState();
   const card = useCard();
   const api = useApi();
