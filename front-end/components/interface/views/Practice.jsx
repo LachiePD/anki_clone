@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { useActiveDeck } from "@/providers/index.mjs";
 export const Practice = () => {
   const { deck, card } = useActiveDeck();
 
   const toggleRevealed = () => setRevealed(!revealed);
-  const card = deck.getCard();
 
   if (card.revealed) {
     return (
