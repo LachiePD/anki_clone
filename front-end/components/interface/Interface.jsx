@@ -6,8 +6,8 @@ export const Interface = () => {
   const { deck } = useActiveDeck();
 
   const chooseMode = {
-    practicing: <Practice />,
-    editing: <Edit />,
+    practice: <Practice />,
+    edit: <Edit />,
     finished: <Finished />,
     default: <Default />,
   };
