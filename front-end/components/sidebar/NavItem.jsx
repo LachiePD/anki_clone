@@ -1,6 +1,7 @@
 import { MeatballMenu } from "@/components/index.mjs";
-
+import { useActiveDeck } from "@/providers/index.mjs";
 export const NavItem = ({ deck, handleDelete, deckSelectionEvent }) => {
+  const { updateDeck } = useActiveDeck();
   return (
     <div
       className={"flex justify-between p-4 hover:bg-secondary-dark rounded-4xl"}
@@ -13,7 +14,7 @@ export const NavItem = ({ deck, handleDelete, deckSelectionEvent }) => {
 
         <button
           className={"button"}
-          onClick={() => deckSelectionEvent(deck.id)}
+          onClick={() => updateDeck({ id: deck.id })}
         >
           Select
         </button>
