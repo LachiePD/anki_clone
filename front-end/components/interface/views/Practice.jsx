@@ -15,7 +15,7 @@ export const Practice = () => {
         <button onClick={drawNextCard}> Correct! </button>
       </>
     );
-  } else if (!isRevealed) {
+  } else if (!revealed) {
     return <button onClick={toggleRevealed}> Show Answer!</button>;
   }
 };
