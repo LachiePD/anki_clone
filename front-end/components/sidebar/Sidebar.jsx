@@ -4,16 +4,12 @@ import { useDeckList, useActiveDeck } from "@/providers/index.mjs";
 
 export const Sidebar = () => {
   const deckList = useDeckList();
-  const { deck: activeDeck } = useActiveDeck();
+  const { deck: activeDeck, updateDeck } = useActiveDeck();
 
   const renderDecks = () => {
     return deckList.decks.map((deck) => (
       <li key={deck.id}>
-        <NavItem
-          deckSelectionEvent={() => activeDeck.setId(deck.id)}
-          handleDelete={deckList.actions.removeDeck}
-          deck={deck}
-        />
+        <NavItem handleDelete={deckList.actions.removeDeck} deck={deck} />
       </li>
     ));
   };
