@@ -8,32 +8,22 @@ export const useDeckState = () => {
   });
   const length = deck.cardList.length;
 
-  const setCardList = (cardList) => setDeck({ ...deck, cardList });
-  const setIndex = (index) => setDeck((prev) => ({ ...prev, index }));
-  const setId = (id) => setDeck({ ...deck, id });
+  const validModes = ["practice", "edit", "inspect", "finished", "default"];
 
-  const setMode = {
-    practice: () => setDeck({ ...deck, mode: "practicing" }),
-    edit: () => setDeck({ ...deck, mode: "editing" }),
-    inspect: () => setDeck({ ...deck, mode: "inspecting" }),
-    finished: () => setDeck({ ...deck, mode: "finished" }),
-    default: () => setDeck({ ...deck, mode: "default" }),
+  const assertMode = (mode) => {
+    if (!validModes.includes(mode))
+      throw new Error("Invalid mode trying to be set");
   };
-  const getCard = () => {
-    const index = deck.index;
-    const cardList = deck.cardList;
-    return cardList[index];
-  };
-
-  const drawNextCard = () => {
-    increment();
-    if (isFinished()) return null;
-    return getCard();
+  const updateDeck = (update) => {
+    if (Object.keys(update).includes("mode")) {
+      assertMode(update.mode);
+    } //this should just be login in assert()
+    setDeck((prev) => ({ ...prev, ...update }));
   };
 
   const increment = () => {
     const newIndex = 1 + deck.index;
-    setIndex(newIndex);
+    updateDeck({ index: newIndex });
   };
 
   const isFinished = () => {
@@ -48,14 +38,9 @@ export const useDeckState = () => {
   };
 
   return {
-    id: deck.id,
-    mode: deck.mode,
-    length,
-    setCardList,
-    setMode,
-    getCard,
-    setId,
-
-    drawNextCard, //this should probably be owned by the context
+    deck,
+    updateDeck,
+    deckLength,
+    increment,
   };
 };
