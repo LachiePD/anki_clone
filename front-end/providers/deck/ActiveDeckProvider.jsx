@@ -14,19 +14,18 @@ export const ActiveDeckProvider = ({ children }) => {
   useEffect(() => {
     if (!deck.id) return;
     fetchCards();
-    if (deckLength !== 0) {
-      updateCard();
-    }
   }, [deck.id]);
 
-  const updateCard = () => {
-    const currentCard = deck.cardList[deck.index];
-    card.setNewCard(currentCard);
-  };
-  //maybe check if this is necessary, may be stored in the sidebar anyway
+  useEffect(() => {
+    updateCard();
+  }, [deck.cardList, deck.index]);
+
+  const updateCard = () => setNewCard(deck.cardList[deck.index]);
+
+  //TODO maybe check if this is necessary, may be stored in the sidebar anyway
   const fetchCards = async () => {
     const data = await api.card.fetchByDeck(deck.id);
-    updateDeck({ cardList: data.cards });
+    updateDeck({ cardList: data.cards, mode: "default" });
   };
 
   const refresh = async () => {
