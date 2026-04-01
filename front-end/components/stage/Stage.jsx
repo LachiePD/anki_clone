@@ -11,5 +11,5 @@ export const Stage = () => {
     default: <Default />,
     finished: <Finished />,
   };
-  return <div>{MODES[deckMode] || <Default />}</div>;
+  return <div>{MODES[deck.mode]}</div>;
 };
