@@ -1,20 +1,17 @@
 "use client";
 import { useState } from "react";
-import { AddCard } from "./AddCard";
+import { AddCardForm } from "./AddCardForm.jsx";
 export const Edit = () => {
   const [addingCard, setAddingCard] = useState(false);
-  const toggleAddingCard = () => {
-    setAddingCard((prev) => !prev);
-  };
   return (
     <>
       {!addingCard && (
         <>
-          <button onClick={toggleAddingCard}>Add Card</button>
+          <button onClick={() => setAddingCard(true)}>Add Card</button>
           <button>Change Deck Name</button>
         </>
       )}
-      {addingCard && <AddCard toggleAddingCard={toggleAddingCard} />}
+      {addingCard && <AddCardForm setAddingCard={setAddingCard} />}
     </>
   );
 };
