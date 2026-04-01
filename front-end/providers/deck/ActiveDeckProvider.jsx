@@ -1,5 +1,5 @@
 "use client";
-import { useContext, createContext, useEffect } from "react";
+import { useContext, createContext, useEffect, useCallback } from "react";
 import { useApi } from "@/providers/index.mjs";
 import { useDeckState } from "./useDeckState.jsx";
 import { useCard } from "./useCard.jsx";

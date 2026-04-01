@@ -5,7 +5,6 @@ import { Finished } from "./views/Finished";
 import { Default } from "./views/Default.jsx";
 export const Stage = () => {
   const { deck } = useActiveDeck();
-  console.log(deck.mode);
   const MODES = {
     practice: <Practice />,
     edit: <Edit />,

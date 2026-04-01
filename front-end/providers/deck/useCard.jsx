@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const useCard = () => {
-  const [card, setCard] = useState({ font: "", back: "", revealed: false });
+  const [card, setCard] = useState({ revealed: false });
 
   const toggleRevealed = () =>
     setCard((prev) => ({ ...prev, revealed: !prev.revealed }));
