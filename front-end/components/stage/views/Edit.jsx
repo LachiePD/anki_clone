@@ -1,8 +1,7 @@
 import { useActiveDeck } from "@/providers/index.mjs";
 
 export const Edit = () => {
-  const activeDeck = useActiveDeck();
-  const deckLength = activeDeck.cardList.length;
+  const { deck } = useActiveDeck();
 
-  return <>Number of cards: {deckLength}</>;
+  return <>Number of cards: {deck.length}</>;
 };

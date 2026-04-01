@@ -1,15 +1,14 @@
 import { useActiveDeck } from "@/providers/index.mjs";
-import { Inspect } from "./views/Inspect";
 import { Practice } from "./views/Practice";
 import { Edit } from "./views/Edit";
 import { Finished } from "./views/Finished";
-import { Default } from "./views/Default";
+import { Default } from "./views/Default.jsx";
 export const Stage = () => {
-  const { deckMode } = useActiveDeck();
+  const { deck } = useActiveDeck();
   const MODES = {
     practicing: <Practice />,
     editing: <Edit />,
-    inspecting: <Inspect />,
+    default: <Default />,
     finished: <Finished />,
   };
   return <div>{MODES[deckMode] || <Default />}</div>;
