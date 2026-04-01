@@ -34,12 +34,11 @@ export const ActiveDeckProvider = ({ children }) => {
   };
 
   const drawNextCard = () => {
-    deck.increment();
-    if (deck.isFinished()) {
-      deck.finishDeck();
+    increment();
+    if (isFinished()) {
+      finishDeck();
       return;
     }
-    updateCard();
   };
 
   const value = {
@@ -47,6 +46,8 @@ export const ActiveDeckProvider = ({ children }) => {
     updateDeck,
     refresh,
     card,
+    toggleRevealed,
+    drawNextCard,
   };
 
   return (
