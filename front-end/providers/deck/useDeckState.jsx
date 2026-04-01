@@ -6,7 +6,7 @@ export const useDeckState = () => {
     index: 0,
     mode: "default",
   });
-  const length = deck.cardList.length;
+  const deckLength = deck.cardList.length;
 
   const validModes = ["practice", "edit", "inspect", "finished", "default"];
 
