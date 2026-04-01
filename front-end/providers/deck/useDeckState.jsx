@@ -4,7 +4,7 @@ export const useDeckState = () => {
     id: null,
     cardList: [],
     index: 0,
-    mode: "Default",
+    mode: "default",
   });
   const length = deck.cardList.length;
 

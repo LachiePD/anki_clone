@@ -9,7 +9,7 @@ export const Interface = () => {
     practicing: <Practice />,
     editing: <Edit />,
     finished: <Finished />,
-    inspecting: <Default />,
+    default: <Default />,
   };
 
   return (
