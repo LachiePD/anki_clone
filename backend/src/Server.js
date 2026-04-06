@@ -7,7 +7,7 @@ class Server {
   constructor({ routers }) {
     this.routerFactory = routers;
     this.app = express();
-    this.port = 9000;
+    this.port = process.env.PORT || 9000;
   }
 
   start() {
@@ -18,7 +18,12 @@ class Server {
   }
 
   setup() {
-    this.app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+    this.app.use(
+      cors({
+        origin: "https://sticky-brain-ffxv.onrender.com/",
+        credentials: true,
+      }),
+    );
     this.app.use(cookieParser());
     this.app.use(express.json());
     this.app.use("/", this.routerFactory.userRouterInstance);
