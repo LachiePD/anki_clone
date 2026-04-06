@@ -7,7 +7,8 @@ export const useApi = () => {
     async (...args) => {
       const data = await func(...args);
       if (data.status !== 200) {
-        console.log("ERROR SON, useApi");
+        console.log("ERROR ");
+        console.log(data.error);
         return;
       }
       return data;
