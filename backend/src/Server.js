@@ -20,7 +20,7 @@ class Server {
   setup() {
     this.app.use(
       cors({
-        origin: "https://sticky-brain-ffxv.onrender.com/",
+        origin: "https://sticky-brain-ffxv.onrender.com",
         credentials: true,
       }),
     );
