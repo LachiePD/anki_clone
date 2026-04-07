@@ -2,14 +2,12 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import { Pool } from "pg";
+
 class DatabaseConnection {
   constructor() {
     this.pool = new Pool({
       connectionString: process.env.CONNECTION_STRING,
-      //ssl: {
-        //rejectUnauthorized: false,
-      //},//comment out ssl for docker container to work
-	    connectionTimeoutMillis: 10000,
+      connectionTimeoutMillis: 10000,
     });
   }
   async query(text, params) {

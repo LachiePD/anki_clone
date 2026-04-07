@@ -1,21 +1,21 @@
 import express from "express";
 import { authMiddleware } from "../middleware/auth.middleware.js";
+const isProduction = process.env.NODE_ENV === "production";
+
 const authRouter = ({ authServices }) => {
   const router = express.Router();
 
   router.post("/login", async (req, res) => {
     const credentials = req.body;
     const token = await authServices.login(credentials);
-    if (!token) {
-      throw new Error("No token received");
-    }
 
-    res.clearCookie("token");
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "strict",
+      secure: isProduction,
+      sameSite: isProduction ? "none" : "lax",
       maxAge: 24 * 60 * 60 * 1000,
+      sameSite: "lax",
+      path: "/",
     });
 
     console.log("LOGGED IN");

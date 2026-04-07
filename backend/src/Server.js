@@ -3,11 +3,12 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
+const allowedOrigin = process.env.ALLOWED_ORIGIN;
 class Server {
   constructor({ routers }) {
     this.routerFactory = routers;
     this.app = express();
-    this.port = process.env.PORT || 9000;
+    this.port = process.env.PORT || 5000;
   }
 
   start() {
@@ -20,11 +21,16 @@ class Server {
   setup() {
     this.app.use(
       cors({
-        origin: "https://sticky-brain-ffxv.onrender.com",
+        origin: allowedOrigin,
         credentials: true,
       }),
     );
     this.app.use(cookieParser());
+    this.app.use((req, res, next) => {
+      console.log("Origin of request:", req.headers.origin);
+      console.log("Cookies found in request:", req.cookies);
+      next();
+    });
     this.app.use(express.json());
     this.app.use("/", this.routerFactory.userRouterInstance);
     this.app.use("/", this.routerFactory.authRouterInstance);
