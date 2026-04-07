@@ -9,6 +9,7 @@ export const useApi = () => {
       if (data.status !== 200) {
         console.log("ERROR ");
         console.log(data.error);
+        throw new Error(data.error);
         return;
       }
       return data;

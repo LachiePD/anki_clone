@@ -1,7 +1,7 @@
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function request(path, options = {}) {
-  const response = await fetch(`${apiUrl}${path}`, {
+  const response = await fetch(`${API_URL}${path}`, {
     headers: { "Content-Type": "application/json" },
     credentials: "include",
     ...options,
