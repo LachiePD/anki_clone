@@ -12,13 +12,11 @@ const authRouter = ({ authServices }) => {
     res.cookie("token", token, {
       httpOnly: true,
       secure: isProduction,
-      sameSite: isProduction ? "none" : "lax",
       maxAge: 24 * 60 * 60 * 1000,
-      sameSite: "lax",
+      sameSite: isProduction ? "none" : "lax",
       path: "/",
     });
 
-    console.log("LOGGED IN");
     return res.status(200).json({ message: "login successfull" });
   });
   router.get("/verify", authMiddleware, async (req, res) => {

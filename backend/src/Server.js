@@ -26,11 +26,6 @@ class Server {
       }),
     );
     this.app.use(cookieParser());
-    this.app.use((req, res, next) => {
-      console.log("Origin of request:", req.headers.origin);
-      console.log("Cookies found in request:", req.cookies);
-      next();
-    });
     this.app.use(express.json());
     this.app.use("/", this.routerFactory.userRouterInstance);
     this.app.use("/", this.routerFactory.authRouterInstance);
