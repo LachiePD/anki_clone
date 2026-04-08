@@ -1,9 +1,11 @@
 import path from "path";
 import dotenv from "dotenv";
 
-dotenv.config({
-  path: path.resolve(process.cwd(), ".env"),
-});
+if (!process.env.NODE_ENV) {
+  dotenv.config({
+    path: path.resolve(process.cwd(), ".env"),
+  });
+}
 import DatabaseConnection from "./infrastructure/DatabaseConnection.js";
 import repositoryFactory from "./factories/repository.factory.js";
 import serviceFactory from "./factories/service.factory.js";
