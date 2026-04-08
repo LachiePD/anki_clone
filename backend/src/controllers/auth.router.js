@@ -6,6 +6,7 @@ const authRouter = ({ authServices }) => {
   const router = express.Router();
 
   router.post("/login", async (req, res) => {
+    console.log(isProduction, "HERE");
     const credentials = req.body;
     const token = await authServices.login(credentials);
 
@@ -13,7 +14,7 @@ const authRouter = ({ authServices }) => {
       httpOnly: true,
       secure: isProduction,
       maxAge: 24 * 60 * 60 * 1000,
-      sameSite: "none",
+      sameSite: isProduction ? "none" : "lax",
       path: "/",
     });
 

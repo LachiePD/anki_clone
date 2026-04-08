@@ -5,14 +5,15 @@ export const useApi = () => {
   const errorHandler =
     (func) =>
     async (...args) => {
-      const data = await func(...args);
-      if (data.status !== 200) {
+      const response = await func(...args);
+      if (!response.ok) {
         console.log("ERROR ");
-        console.log(data.error);
-        throw new Error(data.error);
+        console.log(response);
+        console.log(await response.error);
+        throw new Error(response.error);
         return;
       }
-      return data;
+      return response;
     };
 
   return {

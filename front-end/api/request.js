@@ -7,5 +7,5 @@ export async function request(path, options = {}) {
     ...options,
   });
   const data = await response.json();
-  return { ...data, status: response.status };
+  return { ...data, status: response.status, ok: response.ok };
 }
