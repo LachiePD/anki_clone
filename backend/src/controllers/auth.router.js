@@ -13,7 +13,7 @@ const authRouter = ({ authServices }) => {
       httpOnly: true,
       secure: isProduction,
       maxAge: 24 * 60 * 60 * 1000,
-      sameSite: isProduction ? "none" : "lax",
+      sameSite: "none",
       path: "/",
     });
 
