@@ -1,5 +1,3 @@
-import env from "dotenv/config";
-
 class AuthServices {
   constructor({
     areCredentialsValid,

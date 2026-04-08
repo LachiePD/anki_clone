@@ -3,7 +3,6 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-const allowedOrigin = process.env.ALLOWED_ORIGIN;
 class Server {
   constructor({ routers }) {
     this.routerFactory = routers;
@@ -21,7 +20,7 @@ class Server {
   setup() {
     this.app.use(
       cors({
-        origin: allowedOrigin,
+        origin: process.env.ALLOWED_ORIGIN,
         credentials: true,
       }),
     );
