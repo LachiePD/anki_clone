@@ -4,7 +4,6 @@ const deckRouter = ({ deckServices, authMiddleware }) => {
   const router = express.Router();
 
   router.post("/createDeck", authMiddleware, async (req, res) => {
-    console.log(req.body.userId);
     const userId = req.userId;
     const deckName = req.body.deckName;
 
