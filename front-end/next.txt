@@ -1,5 +1,3 @@
-fix dependencies in the Stage and Views, currently, the Views depend on activeDeck() , as well as Stage doing this. THe views should depend on the Stage, and stage depend on the activeDeck(), not both
+add a button to go 'back' in the interface, currently you either need to select a new deck or refresh completely to go to create a deck.
 
-
-
-providers and hooks are currently in same files a lot of the time, not sure this is correct, look into it . E.g. ActiveDeckProvider exposes both useActiveDeck() and ActiveDeckProvider
+look into tan-stack query. currently , the deckList context is handling the tech debt, but it adds a lot of complexity, it should be removed and everything relies on api calls. but in order to have components refresh , the context is currently there. tan stack-query apparently will fix this issue

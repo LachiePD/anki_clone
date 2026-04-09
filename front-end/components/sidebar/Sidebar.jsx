@@ -1,7 +1,6 @@
 import { NavItem } from "./NavItem.jsx";
 import { Subheader } from "@/components/index.mjs";
-import { useDeckList, useActiveDeck } from "@/providers/index.mjs";
-
+import { useDeckList, useActiveDeck } from "./useDeckList.jsx";
 export const Sidebar = () => {
   const deckList = useDeckList();
   const { deck: activeDeck, updateDeck } = useActiveDeck();
