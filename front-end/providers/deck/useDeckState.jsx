@@ -18,8 +18,7 @@ export const useDeckState = () => {
   const updateDeck = (update) => {
     if (Object.keys(update).includes("mode")) {
       assertMode(update.mode);
-    } //this should just be login in assert()
-    console.log(update);
+    }
     setDeck((prev) => ({ ...prev, ...update }));
   };
 

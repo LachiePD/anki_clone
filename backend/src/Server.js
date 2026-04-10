@@ -18,6 +18,7 @@ class Server {
   }
 
   setup() {
+    console.log(process.env.ALLOWED_ORIGIN);
     this.app.use(
       cors({
         origin: process.env.ALLOWED_ORIGIN,

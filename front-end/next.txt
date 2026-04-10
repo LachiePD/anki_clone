@@ -1,3 +1,5 @@
 add a button to go 'back' in the interface, currently you either need to select a new deck or refresh completely to go to create a deck.
 
 look into tan-stack query. currently , the deckList context is handling the tech debt, but it adds a lot of complexity, it should be removed and everything relies on api calls. but in order to have components refresh , the context is currently there. tan stack-query apparently will fix this issue
+
+a HOF necessary in the api calls, to handle optimistic updating
