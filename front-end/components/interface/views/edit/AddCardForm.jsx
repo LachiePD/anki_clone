@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { useActiveDeck, useApi } from "@/providers/index.mjs";
+import { useActiveDeck } from "@/providers/index.mjs";
 export const AddCardForm = ({ setAddingCard }) => {
   const [content, setContent] = useState({ front: "", back: "" });
-  const { deck, refresh } = useActiveDeck();
-  const api = useApi();
+  const { addNewCard } = useActiveDeck();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -12,8 +11,7 @@ export const AddCardForm = ({ setAddingCard }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    api.card.newCard({ card: content, deckId: deck.id });
-    refresh();
+    addNewCard({ ...content });
     setAddingCard(false);
   };
   return (
