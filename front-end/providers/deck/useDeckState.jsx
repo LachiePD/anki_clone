@@ -35,6 +35,7 @@ export const useDeckState = () => {
 
   return {
     deck,
+    setDeck,
     updateDeck,
     deckLength,
     increment,

@@ -40,6 +40,14 @@ export const ActiveDeckProvider = ({ children }) => {
     }
   };
 
+  const addNewCard = (card) => {
+    const payload = { deckId: deck.id, card };
+    const oldState = deck;
+    const newCardList = [...deck.cardList, card];
+    const newState = { ...deck, cardList: newCardList };
+    api.card.newCard(payload, oldState, newState, setDeck);
+  };
+
   const value = {
     deck,
     updateDeck,
@@ -47,6 +55,7 @@ export const ActiveDeckProvider = ({ children }) => {
     card,
     toggleRevealed,
     drawNextCard,
+    addNewCard,
   };
 
   return (

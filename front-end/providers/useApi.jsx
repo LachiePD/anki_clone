@@ -16,7 +16,18 @@ export const useApi = () => {
       return response;
     };
 
+  const optomisticHandler =
+    (apiCall) => async (payload, oldState, newState, updateState) => {
+      updateState(newState);
+      const response = await apiCall(payload);
+      if (!response.ok) {
+        updateState(oldState);
+        throw new Error(`Error handling ${apiCall}`);
+      }
+    };
+
   return {
+    //TODO, MIGRATE ALL THESE TO USE OPTOMISTICHANDLERE
     auth: {
       login: errorHandler(auth.login),
       createUser: errorHandler(auth.createUser),
@@ -24,7 +35,7 @@ export const useApi = () => {
     },
     card: {
       fetchByDeck: errorHandler(card.fetchByDeck),
-      newCard: errorHandler(card.newCard),
+      newCard: optomisticHandler(card.newCard),
     },
     deck: {
       createDeck: errorHandler(deck.createDeck),
