@@ -9,7 +9,14 @@ export const useDeckState = () => {
   });
   const deckLength = deck.cardList.length;
 
-  const validModes = ["practice", "edit", "inspect", "finished", "default"];
+  const validModes = [
+    "practice",
+    "edit",
+    "inspect",
+    "finished",
+    "default",
+    "creator",
+  ];
 
   const assertMode = (mode) => {
     if (!validModes.includes(mode))

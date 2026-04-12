@@ -10,6 +10,7 @@ export const Interface = () => {
     practice: <Practice />,
     edit: <Edit />,
     finished: <Finished />,
+    creator: <Creator />,
     default: <Default />,
   };
 
