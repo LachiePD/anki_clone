@@ -17,8 +17,7 @@ export const Interface = () => {
   return (
     <Card className="grid grid-cols-3 items-center p-4">
       <div className="flex justify-center gap-5">
-        {!deck.id && <Creator />}
-        {deck.id && chooseMode[deck.mode]}
+        {!deck.id ? <Creator /> : chooseMode[deck.mode]}
       </div>
 
       <div className="flex justify-end">
