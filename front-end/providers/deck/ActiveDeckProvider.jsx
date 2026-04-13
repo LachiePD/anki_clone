@@ -6,16 +6,10 @@ import { useCard } from "./useCard.jsx";
 const ActiveDeckContext = createContext();
 
 export const ActiveDeckProvider = ({ children }) => {
-  const {
-    deck,
-    updateDeck,
-    deckLength,
-    isFinished,
-    finishDeck,
-    setDeck,
-  } = useDeckState(); //this is too much. spread the deckState where its exported, rename the module to deck= useDeckState();
+  const { deck, updateDeck, isFinished, finishDeck, setDeck } = useDeckState(); //this is too much. spread the deckState where its exported, rename the module to deck= useDeckState();
   const { card, toggleRevealed, setNewCard } = useCard();
   const api = useApi();
+  const deckLength = deck.cardList.length;
 
   useEffect(() => {
     if (!deck.id) return;
