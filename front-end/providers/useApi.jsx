@@ -38,7 +38,7 @@ export const useApi = () => {
       newCard: optomisticHandler(card.newCard),
     },
     deck: {
-      createDeck: errorHandler(deck.createDeck),
+      createDeck: optomisticHandler(deck.createDeck),
       getAllDecks: errorHandler(deck.getDecks),
       removeDeck: errorHandler(deck.removeDeck),
     },

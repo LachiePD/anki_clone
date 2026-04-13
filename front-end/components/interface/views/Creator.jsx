@@ -13,7 +13,7 @@ export const Creator = ({ createNewDeck }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await deckList.actions.createDeck({ deckName });
+    await deckList.actions.createDeck(deckName);
     setDeckName("");
   };
   return (

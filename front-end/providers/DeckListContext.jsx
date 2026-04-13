@@ -14,7 +14,15 @@ export const DeckListProvider = ({ children }) => {
   }, []);
 
   const createDeck = (deckName) => {
-    const response = api.deck.createDeck(deckName);
+    const newDeckList = [...decks, deckName];
+    const oldDeckList = decks;
+    const payload = { deckName };
+    const response = api.deck.createDeck(
+      payload,
+      oldDeckList,
+      newDeckList,
+      setDecks,
+    );
     fetchDecks();
   };
 

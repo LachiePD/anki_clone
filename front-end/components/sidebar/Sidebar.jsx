@@ -6,8 +6,8 @@ export const Sidebar = () => {
   const { deck: activeDeck, updateDeck } = useActiveDeck();
 
   const renderDecks = () => {
-    return deckList.decks.map((deck) => (
-      <li key={deck.id}>
+    return deckList.decks.map((deck, index) => (
+      <li key={deck.id || index}>
         <NavItem handleDelete={deckList.actions.removeDeck} deck={deck} />
       </li>
     ));
