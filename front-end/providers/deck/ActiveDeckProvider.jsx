@@ -10,7 +10,6 @@ export const ActiveDeckProvider = ({ children }) => {
     deck,
     updateDeck,
     deckLength,
-    increment,
     isFinished,
     finishDeck,
     setDeck,
@@ -40,11 +39,12 @@ export const ActiveDeckProvider = ({ children }) => {
   };
 
   const drawNextCard = () => {
-    increment();
-    if (isFinished()) {
+    const newIndex = 1 + deck.index;
+    if (isFinished(newIndex)) {
       finishDeck();
       return;
     }
+    updateDeck({ index: newIndex });
   };
 
   const addNewCard = (card) => {
