@@ -1,7 +1,6 @@
 import { useActiveDeck } from "@/providers/index.mjs";
 export const Practice = () => {
-  const { card, deck } = useActiveDeck();
-  console.log(card.revealed);
+  const { card } = useActiveDeck();
   return (
     <>
       {!card.revealed ? (

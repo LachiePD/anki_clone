@@ -54,6 +54,7 @@ export const ActiveDeckProvider = ({ children }) => {
     const newState = { ...deck, cardList: newCardList };
     api.card.newCard(payload, oldState, newState, setDeck);
   };
+  const isEmpty = () => deck.cardList.length === 0;
 
   const value = {
     deck,
@@ -63,6 +64,7 @@ export const ActiveDeckProvider = ({ children }) => {
     toggleRevealed,
     drawNextCard,
     addNewCard,
+    isEmpty,
   };
 
   return (
