@@ -1,55 +1,65 @@
-Flashcard App (PERN Stack)
+# Sticky Brain
 
-A personal learning project built to practice full-stack development with the PERN stack (PostgreSQL, Express, React, Node) and Next.js on the front-end. This project demonstrates modular backend architecture, React state management, and full-stack integration.
-
-Features
-
-Create, edit, and study flashcards
-
-Organize cards into decks
-
-User authentication and login
-
-Modular backend using controllers, services, and repositories
-
-Responsive front-end built with React + Next.js
-
-Hosted on Render (PostgreSQL database + Node backend)
-
-Technologies Used
-
-Frontend: React, Next.js, Tailwind CSS
-
-Backend: Node.js, Express, PostgreSQL
-
-Database: PostgreSQL (Docker for local development, hosted on Render)
-
-Testing / Development Tools: JEST, React Testing Library, AI-assisted debugging and best practices
-
-Architecture & Best Practices
-
-Backend is separated into /controllers, /services, and /repositories for modularity and maintainability.
-
-Frontend state management can be refactored to use React Context for cleaner and more predictable data flow.
-
-API responses currently vary in structure; standardizing them would improve maintainability.
-
-Learnings & Reflections:
-
-Consider finishing all functionality before adding CSS to avoid repeated rework.
-
-Plan state management early to reduce costly refactoring later.
-
-Implement tests with JEST/React Testing Library to improve reliability.
-
-Consider Server-Side Rendering (SSR) for better performance and SEO.
+A full-stack flash-card app, built in the PERN stack.
 
 
-if I was to do this again:
--I would wait until all the functionality was done before adding ANY kind of CSS.
--be more structured with how I was returning back end data. Currently , all routes return a different structure of data, and its hard to justify going back and refactoring now that it all works properly.
--I would strucure how state is going to work, having to go refactor code to pull state into a context can be time consuming if theres not much modularity. 
--Use JEST/React testing library to implement tests.
--USE SSR on the back-end. 
+## Live Demo
+https://sticky-brain-ffxv.onrender.com/
+-PLease note, these are running on free tiers via Render. Expect some delay when first spinning up the app, then again for the backend to wake up also.
 
 
+## Features
+- Create and manage decks
+- Authentication with JWT
+- Responsive UI
+
+## Setup
+
+git clone ...
+In one terminal:
+cd ./frontend
+npm install
+npm run dev
+env variables:
+NEXT_PUBLIC_API_URL=http://localhost:5000
+
+In second:
+cd ./backend
+npm install
+node /src/compositionRoot.js
+env variables:
+JWT_SECRET=<your own here>
+NODE_ENV=developement
+CONNECTION_STRING=<this is your specific postgres instance
+ALLOWED_ORIGIN=http://localhost:3000
+Note: you will have to have a postgres instance running for the backend to hook up to. I did this with a docker container.
+
+
+## Architecture
+
+This project follows a layered architecture:
+
+- Routes → handle HTTP requests
+- Services → business logic
+- Repositories - database access
+
+## Key Decisions
+
+- Used HTTP-only cookies for auth to improve security
+- Separated domain logic from controllers
+- Chose PostgreSQL for relational data integrity
+
+
+
+## Future Improvements
+
+- Add spaced repetition algorithm 
+- Add loading functionality
+- Add offline support
+
+
+## Developer Workflow
+
+- Neovim + Ubuntu environment
+- AI used as a learning tool and pair programmer
+- Focus on understanding concepts, not just generating code
