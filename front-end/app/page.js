@@ -8,14 +8,12 @@ const page = () => {
   const router = useRouter();
 
   return (
-    <div className={"  flex flex-col  h-full mx-auto  justify-center"}>
-      <Card header={"Create User!"}>
-        <CreateUserForm />
-        <button className={"button"} onClick={() => router.push("/login")}>
-          Login
-        </button>
-      </Card>
-    </div>
+    <Card className={"mx-auto gap-5"} header={"Create User!"}>
+      <CreateUserForm />
+      <button className={"button"} onClick={() => router.push("/login")}>
+        Login
+      </button>
+    </Card>
   );
 };
 
