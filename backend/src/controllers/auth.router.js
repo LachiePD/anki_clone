@@ -6,7 +6,6 @@ const authRouter = ({ authServices }) => {
   const router = express.Router();
 
   router.post("/login", async (req, res) => {
-    console.log(isProduction, "HERE");
     const credentials = req.body;
     const token = await authServices.login(credentials);
 
