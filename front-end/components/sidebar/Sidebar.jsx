@@ -8,6 +8,7 @@ export const Sidebar = () => {
   const { deck: activeDeck, updateDeck } = useActiveDeck();
   const { visibleRef, toggleVisible, visible } = useSidebar();
 
+  //TODO this should be in useActiveDeck()?
   const renderDecks = () => {
     return deckList.decks.map((deck, index) => (
       <li key={deck.id || index}>
