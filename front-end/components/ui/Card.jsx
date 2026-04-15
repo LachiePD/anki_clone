@@ -15,4 +15,3 @@ export const Card = ({ header, children, className }) => {
     </div>
   );
 };
-
