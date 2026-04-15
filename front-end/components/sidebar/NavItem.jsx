@@ -14,7 +14,9 @@ export const NavItem = ({ deck, handleDelete, deckSelectionEvent }) => {
 
         <button
           className={"button"}
-          onClick={() => updateDeck({ id: deck.id, name: deck.name })}
+          onClick={() =>
+            updateDeck({ mode: "default", id: deck.id, name: deck.name })
+          }
         >
           Select
         </button>
