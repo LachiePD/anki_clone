@@ -17,6 +17,7 @@ export const Sidebar = () => {
   };
   return (
     <>
+      <HamburgerBar handleClick={toggleVisible} />
 
       <nav
         className={`
