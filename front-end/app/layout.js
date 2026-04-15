@@ -4,11 +4,7 @@ import { AuthProvider } from "@/providers/index.mjs";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={
-          "min-h-screen min-w-screen bg-primary overflow-hidden flex items-center"
-        }
-      >
+      <body className={" flex max-w-screen  bg-primary  "}>
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
