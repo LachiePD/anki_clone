@@ -3,6 +3,7 @@ const styles = {
 	bg-primary shadow-xl rounded-2xl
 	border border-secondary 
 	p-8
+	gap-4
 	`,
 };
 
