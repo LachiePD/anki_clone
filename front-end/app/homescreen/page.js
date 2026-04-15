@@ -4,21 +4,21 @@ import { useAuth, useActiveDeck } from "@/providers/index.mjs";
 
 const page = () => {
   return (
-    <main>
+    <>
       <Sidebar />
-      <section
+      <main
         className={
           " flex flex-col min-h-screen p-5 justify-between bg-primary "
         }
       >
         <header className={"min-h-24"}>
-          <h1 className={"text-3xl "}>my sticky brain :)</h1>
+          <h1 className={"text-3xl "}>sticky brain </h1>
         </header>
         <Stage />
 
         <Interface />
-      </section>
-    </main>
+      </main>
+    </>
   );
 };
 
